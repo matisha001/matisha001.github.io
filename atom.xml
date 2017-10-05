@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://matisha001.github.io/"/>
-  <updated>2017-10-05T19:59:13.649Z</updated>
+  <updated>2017-10-05T19:59:13.647Z</updated>
   <id>https://matisha001.github.io/</id>
   
   <author>
@@ -15,36 +15,6 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
-  
-  <entry>
-    <title>vuex2.x</title>
-    <link href="https://matisha001.github.io/2016/10/23/vuex2.x/"/>
-    <id>https://matisha001.github.io/2016/10/23/vuex2.x/</id>
-    <published>2016-10-22T16:34:14.000Z</published>
-    <updated>2017-10-05T19:59:13.649Z</updated>
-    
-    <content type="html"><![CDATA[<p><img src="http://note.youdao.com/yws/res/17461/CEBC22DFECD4431B90CE2C5E45DBD418" alt="image"></p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;&lt;img src=&quot;http://note.youdao.com/yws/res/17461/CEBC22DFECD4431B90CE2C5E45DBD418&quot; alt=&quot;image&quot;&gt;&lt;/p&gt;
-
-      
-    
-    </summary>
-    
-    
-      <category term="javascript" scheme="https://matisha001.github.io/tags/javascript/"/>
-    
-      <category term="frame" scheme="https://matisha001.github.io/tags/frame/"/>
-    
-      <category term="vue" scheme="https://matisha001.github.io/tags/vue/"/>
-    
-      <category term="vuex" scheme="https://matisha001.github.io/tags/vuex/"/>
-    
-  </entry>
   
   <entry>
     <title>vuex1.x</title>
@@ -63,6 +33,36 @@
 &lt;ul&gt;
 &lt;li&gt;第1步：加入 store&lt;/li&gt;
 &lt;li&gt;第2步：创建 ac
+      
+    
+    </summary>
+    
+    
+      <category term="javascript" scheme="https://matisha001.github.io/tags/javascript/"/>
+    
+      <category term="frame" scheme="https://matisha001.github.io/tags/frame/"/>
+    
+      <category term="vue" scheme="https://matisha001.github.io/tags/vue/"/>
+    
+      <category term="vuex" scheme="https://matisha001.github.io/tags/vuex/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>vuex2.x</title>
+    <link href="https://matisha001.github.io/2016/10/23/vuex2.x/"/>
+    <id>https://matisha001.github.io/2016/10/23/vuex2.x/</id>
+    <published>2016-10-22T16:34:14.000Z</published>
+    <updated>2017-10-05T19:59:13.649Z</updated>
+    
+    <content type="html"><![CDATA[<p><img src="http://note.youdao.com/yws/res/17461/CEBC22DFECD4431B90CE2C5E45DBD418" alt="image"></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;&lt;img src=&quot;http://note.youdao.com/yws/res/17461/CEBC22DFECD4431B90CE2C5E45DBD418&quot; alt=&quot;image&quot;&gt;&lt;/p&gt;
+
       
     
     </summary>
@@ -189,6 +189,30 @@
   </entry>
   
   <entry>
+    <title>react基础学习</title>
+    <link href="https://matisha001.github.io/2016/09/29/react%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0/"/>
+    <id>https://matisha001.github.io/2016/09/29/react基础学习/</id>
+    <published>2016-09-28T16:34:14.000Z</published>
+    <updated>2017-10-05T19:59:13.624Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="React-简介"><a href="#React-简介" class="headerlink" title="React 简介"></a>React 简介</h3><h4 id="起源"><a href="#起源" class="headerlink" title="起源"></a>起源</h4><p>React起源于Facebook的内部项目，该公司积极尝试引入HTML5技术用来架设Instagram网站，开发中发现HTML5的性能下降明显，达不到预期的效果。他们就自己开发了React框架。</p><a id="more"></a><h4 id="特点"><a href="#特点" class="headerlink" title="特点"></a>特点</h4><p><strong>虚拟DOM:</strong>  React也是以数据驱动的，每次数据变化React都会扫码整个虚拟DOM树，自动计算与上次虚拟DOM的差异变化，然后针对需要变化的部分进行实际的浏览器DOM更新。<br><strong>组件化:</strong>  React可以从功能角度横向划分，将UI分解成不同组件，各组件都独立封装，整个UI是由一个个小组件构成的一个大组件，每个组件只关系自身的逻辑，彼此独立。<br><strong>单项数据流:</strong> React设计者认为数据双向绑定虽然便捷，但在复杂场景下副作用也是很明显，所以React更倾向于单向的数据流动-从父节点传递到子节点。（使用ReactLink也可以实现双向绑定，但不建议使用）</p><h3 id="Hello-world"><a href="#Hello-world" class="headerlink" title="Hello world"></a>Hello world</h3><h4 id="下载地址"><a href="#下载地址" class="headerlink" title="下载地址"></a>下载地址</h4><p>ReactJS官方地址：<a href="https://facebook.github.io/react/" target="_blank" rel="external">https://facebook.github.io/react/</a></p><p>GitHub地址：<a href="https://github.com/facebook/react" target="_blank" rel="external">https://github.com/facebook/react</a></p><p>引用react.js和react-dom.js（注意引用顺序）</p><p><strong>react.js：</strong> 实现React核心逻辑，且于具体的渲染引擎无关，从而可以跨平台公用。如果应用要迁移到React Native，这一部分逻辑是不需要改变的。<br><strong>react-dom.js：</strong>  包含了具体的DOM渲染更新逻辑，以及服务端渲染的逻辑，这部分就是与浏览器相关的部分了。<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">&lt;script src=<span class="string">"./common/react.js"</span>&gt;<span class="xml"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></div><div class="line">&lt;script src=<span class="string">"./common/react-dom.js"</span>&gt;<span class="xml"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></div></pre></td></tr></table></figure></p><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"reactContainer"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div></pre></td></tr></table></figure><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">&lt;script&gt;</div><div class="line">    <span class="keyword">var</span> HelloComponent = React.createClass(&#123;</div><div class="line">        render:<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">            <span class="keyword">return</span> React.createElement(<span class="string">'h1'</span>, <span class="literal">null</span>, <span class="string">'Hello world'</span>);</div><div class="line">        &#125;</div><div class="line">    &#125;);</div><div class="line">    ReactDOM.render(</div><div class="line">        React.createElement(HelloComponent, <span class="literal">null</span>),</div><div class="line">        <span class="built_in">document</span>.getElementById(<span class="string">'reactContainer'</span>)</div><div class="line">    );</div><div class="line">&lt;<span class="regexp">/script&gt;</span></div></pre></td></tr></table></figure><h4 id="React-createClass"><a href="#React-createClass" class="headerlink" title="React.createClass"></a>React.createClass</h4>]]></content>
+    
+    <summary type="html">
+    
+      &lt;h3 id=&quot;React-简介&quot;&gt;&lt;a href=&quot;#React-简介&quot; class=&quot;headerlink&quot; title=&quot;React 简介&quot;&gt;&lt;/a&gt;React 简介&lt;/h3&gt;&lt;h4 id=&quot;起源&quot;&gt;&lt;a href=&quot;#起源&quot; class=&quot;headerlink&quot; title=&quot;起源&quot;&gt;&lt;/a&gt;起源&lt;/h4&gt;&lt;p&gt;React起源于Facebook的内部项目，该公司积极尝试引入HTML5技术用来架设Instagram网站，开发中发现HTML5的性能下降明显，达不到预期的效果。他们就自己开发了React框架。&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="javascript" scheme="https://matisha001.github.io/tags/javascript/"/>
+    
+      <category term="react" scheme="https://matisha001.github.io/tags/react/"/>
+    
+      <category term="frame" scheme="https://matisha001.github.io/tags/frame/"/>
+    
+  </entry>
+  
+  <entry>
     <title>react生命周期</title>
     <link href="https://matisha001.github.io/2016/09/29/react%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F/"/>
     <id>https://matisha001.github.io/2016/09/29/react生命周期/</id>
@@ -244,57 +268,6 @@
   </entry>
   
   <entry>
-    <title>react基础学习</title>
-    <link href="https://matisha001.github.io/2016/09/29/react%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0/"/>
-    <id>https://matisha001.github.io/2016/09/29/react基础学习/</id>
-    <published>2016-09-28T16:34:14.000Z</published>
-    <updated>2017-10-05T19:59:13.624Z</updated>
-    
-    <content type="html"><![CDATA[<h3 id="React-简介"><a href="#React-简介" class="headerlink" title="React 简介"></a>React 简介</h3><h4 id="起源"><a href="#起源" class="headerlink" title="起源"></a>起源</h4><p>React起源于Facebook的内部项目，该公司积极尝试引入HTML5技术用来架设Instagram网站，开发中发现HTML5的性能下降明显，达不到预期的效果。他们就自己开发了React框架。</p><a id="more"></a><h4 id="特点"><a href="#特点" class="headerlink" title="特点"></a>特点</h4><p><strong>虚拟DOM:</strong>  React也是以数据驱动的，每次数据变化React都会扫码整个虚拟DOM树，自动计算与上次虚拟DOM的差异变化，然后针对需要变化的部分进行实际的浏览器DOM更新。<br><strong>组件化:</strong>  React可以从功能角度横向划分，将UI分解成不同组件，各组件都独立封装，整个UI是由一个个小组件构成的一个大组件，每个组件只关系自身的逻辑，彼此独立。<br><strong>单项数据流:</strong> React设计者认为数据双向绑定虽然便捷，但在复杂场景下副作用也是很明显，所以React更倾向于单向的数据流动-从父节点传递到子节点。（使用ReactLink也可以实现双向绑定，但不建议使用）</p><h3 id="Hello-world"><a href="#Hello-world" class="headerlink" title="Hello world"></a>Hello world</h3><h4 id="下载地址"><a href="#下载地址" class="headerlink" title="下载地址"></a>下载地址</h4><p>ReactJS官方地址：<a href="https://facebook.github.io/react/" target="_blank" rel="external">https://facebook.github.io/react/</a></p><p>GitHub地址：<a href="https://github.com/facebook/react" target="_blank" rel="external">https://github.com/facebook/react</a></p><p>引用react.js和react-dom.js（注意引用顺序）</p><p><strong>react.js：</strong> 实现React核心逻辑，且于具体的渲染引擎无关，从而可以跨平台公用。如果应用要迁移到React Native，这一部分逻辑是不需要改变的。<br><strong>react-dom.js：</strong>  包含了具体的DOM渲染更新逻辑，以及服务端渲染的逻辑，这部分就是与浏览器相关的部分了。<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">&lt;script src=<span class="string">"./common/react.js"</span>&gt;<span class="xml"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></div><div class="line">&lt;script src=<span class="string">"./common/react-dom.js"</span>&gt;<span class="xml"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></div></pre></td></tr></table></figure></p><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"reactContainer"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div></pre></td></tr></table></figure><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">&lt;script&gt;</div><div class="line">    <span class="keyword">var</span> HelloComponent = React.createClass(&#123;</div><div class="line">        render:<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">            <span class="keyword">return</span> React.createElement(<span class="string">'h1'</span>, <span class="literal">null</span>, <span class="string">'Hello world'</span>);</div><div class="line">        &#125;</div><div class="line">    &#125;);</div><div class="line">    ReactDOM.render(</div><div class="line">        React.createElement(HelloComponent, <span class="literal">null</span>),</div><div class="line">        <span class="built_in">document</span>.getElementById(<span class="string">'reactContainer'</span>)</div><div class="line">    );</div><div class="line">&lt;<span class="regexp">/script&gt;</span></div></pre></td></tr></table></figure><h4 id="React-createClass"><a href="#React-createClass" class="headerlink" title="React.createClass"></a>React.createClass</h4>]]></content>
-    
-    <summary type="html">
-    
-      &lt;h3 id=&quot;React-简介&quot;&gt;&lt;a href=&quot;#React-简介&quot; class=&quot;headerlink&quot; title=&quot;React 简介&quot;&gt;&lt;/a&gt;React 简介&lt;/h3&gt;&lt;h4 id=&quot;起源&quot;&gt;&lt;a href=&quot;#起源&quot; class=&quot;headerlink&quot; title=&quot;起源&quot;&gt;&lt;/a&gt;起源&lt;/h4&gt;&lt;p&gt;React起源于Facebook的内部项目，该公司积极尝试引入HTML5技术用来架设Instagram网站，开发中发现HTML5的性能下降明显，达不到预期的效果。他们就自己开发了React框架。&lt;/p&gt;
-    
-    </summary>
-    
-    
-      <category term="javascript" scheme="https://matisha001.github.io/tags/javascript/"/>
-    
-      <category term="react" scheme="https://matisha001.github.io/tags/react/"/>
-    
-      <category term="frame" scheme="https://matisha001.github.io/tags/frame/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>vue2.0生命周期</title>
-    <link href="https://matisha001.github.io/2016/09/25/vue2.x%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F/"/>
-    <id>https://matisha001.github.io/2016/09/25/vue2.x生命周期/</id>
-    <published>2016-09-24T16:34:14.000Z</published>
-    <updated>2017-10-05T19:59:13.638Z</updated>
-    
-    <content type="html"><![CDATA[<h3 id="生命周期"><a href="#生命周期" class="headerlink" title="生命周期"></a>生命周期</h3><p><img src="https://note.youdao.com/yws/res/7869/C6254C9D40F742CB96B3032A69FC6AFD" alt="image"></p><hr>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h3 id=&quot;生命周期&quot;&gt;&lt;a href=&quot;#生命周期&quot; class=&quot;headerlink&quot; title=&quot;生命周期&quot;&gt;&lt;/a&gt;生命周期&lt;/h3&gt;&lt;p&gt;&lt;img src=&quot;https://note.youdao.com/yws/res/7869/C6254C9D40F742C
-      
-    
-    </summary>
-    
-    
-      <category term="javascript" scheme="https://matisha001.github.io/tags/javascript/"/>
-    
-      <category term="frame" scheme="https://matisha001.github.io/tags/frame/"/>
-    
-      <category term="vue" scheme="https://matisha001.github.io/tags/vue/"/>
-    
-  </entry>
-  
-  <entry>
     <title>vue2过渡效果总结</title>
     <link href="https://matisha001.github.io/2016/09/25/vue2.x%E8%BF%87%E6%B8%A1%E6%95%88%E6%9E%9C%E6%80%BB%E7%BB%93/"/>
     <id>https://matisha001.github.io/2016/09/25/vue2.x过渡效果总结/</id>
@@ -319,6 +292,33 @@
 &lt;li&gt;如果没有找到 JavaScript 钩子并且也没有检测到 CSS 过渡/动画，DOM 操作（插入/删除）在下一帧中立即执行。&lt;/li&gt;
 &lt;/ol&gt;
 &lt;hr&gt;
+    
+    </summary>
+    
+    
+      <category term="javascript" scheme="https://matisha001.github.io/tags/javascript/"/>
+    
+      <category term="frame" scheme="https://matisha001.github.io/tags/frame/"/>
+    
+      <category term="vue" scheme="https://matisha001.github.io/tags/vue/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>vue2.0生命周期</title>
+    <link href="https://matisha001.github.io/2016/09/25/vue2.x%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F/"/>
+    <id>https://matisha001.github.io/2016/09/25/vue2.x生命周期/</id>
+    <published>2016-09-24T16:34:14.000Z</published>
+    <updated>2017-10-05T19:59:13.638Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="生命周期"><a href="#生命周期" class="headerlink" title="生命周期"></a>生命周期</h3><p><img src="https://note.youdao.com/yws/res/7869/C6254C9D40F742CB96B3032A69FC6AFD" alt="image"></p><hr>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h3 id=&quot;生命周期&quot;&gt;&lt;a href=&quot;#生命周期&quot; class=&quot;headerlink&quot; title=&quot;生命周期&quot;&gt;&lt;/a&gt;生命周期&lt;/h3&gt;&lt;p&gt;&lt;img src=&quot;https://note.youdao.com/yws/res/7869/C6254C9D40F742C
+      
     
     </summary>
     
