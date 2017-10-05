@@ -241,7 +241,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://matisha001.github.io/2016/09/25/vue2.x生命周期/">
+    <link itemprop="mainEntityOfPage" href="https://matisha001.github.io/2016/09/25/vue2.x过渡效果总结/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="仰天長嘯歸去來，金戈鐵馬功壹場！">
@@ -260,7 +260,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2016/09/25/vue2.x生命周期/" itemprop="url">vue2.0生命周期</a></h1>
+                <a class="post-title-link" href="/2016/09/25/vue2.x过渡效果总结/" itemprop="url">vue2过渡效果总结</a></h1>
         
 
         <div class="post-meta">
@@ -311,11 +311,27 @@
 
       
         
-          
-            <h3 id="生命周期"><a href="#生命周期" class="headerlink" title="生命周期"></a>生命周期</h3><p><img src="https://note.youdao.com/yws/res/7869/C6254C9D40F742CB96B3032A69FC6AFD" alt="image"></p>
+          <h2 id="单元素过渡"><a href="#单元素过渡" class="headerlink" title="单元素过渡"></a>单元素过渡</h2><p>Vue 提供了 transition 的封装组件</p>
+<ul>
+<li>条件渲染 （使用 v-if）</li>
+<li>条件展示 （使用 v-show）</li>
+<li>动态组件</li>
+<li>组件根节点</li>
+</ul>
+<p>当插入或删除包含在 transition 组件中的元素时，Vue 将会做以下处理：</p>
+<ol>
+<li>自动嗅探目标元素是否有 CSS 过渡或动画，并在合适时添加/删除 CSS 类名。</li>
+<li>如果过渡组件设置了过渡的 JavaScript 钩子函数，会在相应的阶段调用钩子函数。</li>
+<li>如果没有找到 JavaScript 钩子并且也没有检测到 CSS 过渡/动画，DOM 操作（插入/删除）在下一帧中立即执行。</li>
+</ol>
 <hr>
-
-          
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2016/09/25/vue2.x过渡效果总结/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
