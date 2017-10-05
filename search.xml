@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title><![CDATA[vuex1.x]]></title>
-    <url>%2F2016%2F10%2F23%2Fvuex1.x%2F</url>
-    <content type="text"><![CDATA[第1步：加入 store 第2步：创建 action 第3步：创建 state 和 mutation 第4步：在组件获取值 State 和 Getters]]></content>
+    <title><![CDATA[vuex2.x]]></title>
+    <url>%2F2016%2F10%2F23%2Fvuex2.x%2F</url>
+    <content type="text"><![CDATA[]]></content>
       <tags>
         <tag>javascript</tag>
         <tag>frame</tag>
@@ -12,9 +12,9 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[vuex2.x]]></title>
-    <url>%2F2016%2F10%2F23%2Fvuex2.x%2F</url>
-    <content type="text"><![CDATA[]]></content>
+    <title><![CDATA[vuex1.x]]></title>
+    <url>%2F2016%2F10%2F23%2Fvuex1.x%2F</url>
+    <content type="text"><![CDATA[第1步：加入 store 第2步：创建 action 第3步：创建 state 和 mutation 第4步：在组件获取值 State 和 Getters]]></content>
       <tags>
         <tag>javascript</tag>
         <tag>frame</tag>
@@ -62,16 +62,6 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[react基础学习]]></title>
-    <url>%2F2016%2F09%2F29%2Freact%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0%2F</url>
-    <content type="text"><![CDATA[React 简介起源React起源于Facebook的内部项目，该公司积极尝试引入HTML5技术用来架设Instagram网站，开发中发现HTML5的性能下降明显，达不到预期的效果。他们就自己开发了React框架。 特点虚拟DOM: React也是以数据驱动的，每次数据变化React都会扫码整个虚拟DOM树，自动计算与上次虚拟DOM的差异变化，然后针对需要变化的部分进行实际的浏览器DOM更新。组件化: React可以从功能角度横向划分，将UI分解成不同组件，各组件都独立封装，整个UI是由一个个小组件构成的一个大组件，每个组件只关系自身的逻辑，彼此独立。单项数据流: React设计者认为数据双向绑定虽然便捷，但在复杂场景下副作用也是很明显，所以React更倾向于单向的数据流动-从父节点传递到子节点。（使用ReactLink也可以实现双向绑定，但不建议使用） Hello world下载地址ReactJS官方地址：https://facebook.github.io/react/ GitHub地址：https://github.com/facebook/react 引用react.js和react-dom.js（注意引用顺序） react.js： 实现React核心逻辑，且于具体的渲染引擎无关，从而可以跨平台公用。如果应用要迁移到React Native，这一部分逻辑是不需要改变的。react-dom.js： 包含了具体的DOM渲染更新逻辑，以及服务端渲染的逻辑，这部分就是与浏览器相关的部分了。12&lt;script src="./common/react.js"&gt;&lt;/script&gt;&lt;script src="./common/react-dom.js"&gt;&lt;/script&gt; 1&lt;div id="reactContainer"&gt;&lt;/div&gt; 1234567891011&lt;script&gt; var HelloComponent = React.createClass(&#123; render:function() &#123; return React.createElement('h1', null, 'Hello world'); &#125; &#125;); ReactDOM.render( React.createElement(HelloComponent, null), document.getElementById('reactContainer') );&lt;/script&gt; React.createClass]]></content>
-      <tags>
-        <tag>javascript</tag>
-        <tag>react</tag>
-        <tag>frame</tag>
-      </tags>
-  </entry>
-  <entry>
     <title><![CDATA[react生命周期]]></title>
     <url>%2F2016%2F09%2F29%2Freact%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F%2F</url>
     <content type="text"><![CDATA[]]></content>
@@ -89,6 +79,16 @@
         <tag>javascript</tag>
         <tag>frame</tag>
         <tag>vue</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[react基础学习]]></title>
+    <url>%2F2016%2F09%2F29%2Freact%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0%2F</url>
+    <content type="text"><![CDATA[React 简介起源React起源于Facebook的内部项目，该公司积极尝试引入HTML5技术用来架设Instagram网站，开发中发现HTML5的性能下降明显，达不到预期的效果。他们就自己开发了React框架。 特点虚拟DOM: React也是以数据驱动的，每次数据变化React都会扫码整个虚拟DOM树，自动计算与上次虚拟DOM的差异变化，然后针对需要变化的部分进行实际的浏览器DOM更新。组件化: React可以从功能角度横向划分，将UI分解成不同组件，各组件都独立封装，整个UI是由一个个小组件构成的一个大组件，每个组件只关系自身的逻辑，彼此独立。单项数据流: React设计者认为数据双向绑定虽然便捷，但在复杂场景下副作用也是很明显，所以React更倾向于单向的数据流动-从父节点传递到子节点。（使用ReactLink也可以实现双向绑定，但不建议使用） Hello world下载地址ReactJS官方地址：https://facebook.github.io/react/ GitHub地址：https://github.com/facebook/react 引用react.js和react-dom.js（注意引用顺序） react.js： 实现React核心逻辑，且于具体的渲染引擎无关，从而可以跨平台公用。如果应用要迁移到React Native，这一部分逻辑是不需要改变的。react-dom.js： 包含了具体的DOM渲染更新逻辑，以及服务端渲染的逻辑，这部分就是与浏览器相关的部分了。12&lt;script src="./common/react.js"&gt;&lt;/script&gt;&lt;script src="./common/react-dom.js"&gt;&lt;/script&gt; 1&lt;div id="reactContainer"&gt;&lt;/div&gt; 1234567891011&lt;script&gt; var HelloComponent = React.createClass(&#123; render:function() &#123; return React.createElement('h1', null, 'Hello world'); &#125; &#125;); ReactDOM.render( React.createElement(HelloComponent, null), document.getElementById('reactContainer') );&lt;/script&gt; React.createClass]]></content>
+      <tags>
+        <tag>javascript</tag>
+        <tag>react</tag>
+        <tag>frame</tag>
       </tags>
   </entry>
   <entry>
