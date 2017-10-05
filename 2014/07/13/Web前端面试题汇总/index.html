@@ -1,0 +1,769 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.3" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.3">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.3">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.3">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.3" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="HTML,CSS,javascript," />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="matisha's Notes" type="application/atom+xml" />
+
+
+
+
+
+
+<meta name="description" content="如何理解HTML结构的语义化？所谓标签语义化，就是指标签的含义。语义化的主要目的就是让大家直观的认识标签(markup)和属性(attribute)的用途和作用，对搜索引擎友好，有了良好的结构和语义我们的网页内容便自然容易被搜索引擎抓取，这种符合搜索引擎收索规则的做法，网站的推广便可以省下不少的功夫，而且可维护性更高，因为结构清晰,十分易于阅读。这也是搜索引擎优化SEO重要的一步。">
+<meta name="keywords" content="HTML,CSS,javascript">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Web前端面试题汇总">
+<meta property="og:url" content="https://matisha001.github.io/2014/07/13/Web前端面试题汇总/index.html">
+<meta property="og:site_name" content="matisha&#39;s Notes">
+<meta property="og:description" content="如何理解HTML结构的语义化？所谓标签语义化，就是指标签的含义。语义化的主要目的就是让大家直观的认识标签(markup)和属性(attribute)的用途和作用，对搜索引擎友好，有了良好的结构和语义我们的网页内容便自然容易被搜索引擎抓取，这种符合搜索引擎收索规则的做法，网站的推广便可以省下不少的功夫，而且可维护性更高，因为结构清晰,十分易于阅读。这也是搜索引擎优化SEO重要的一步。">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://s10.sinaimg.cn/mw690/001Z3Vflgy71PuAfaMF39">
+<meta property="og:updated_time" content="2017-10-05T19:59:13.614Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Web前端面试题汇总">
+<meta name="twitter:description" content="如何理解HTML结构的语义化？所谓标签语义化，就是指标签的含义。语义化的主要目的就是让大家直观的认识标签(markup)和属性(attribute)的用途和作用，对搜索引擎友好，有了良好的结构和语义我们的网页内容便自然容易被搜索引擎抓取，这种符合搜索引擎收索规则的做法，网站的推广便可以省下不少的功夫，而且可维护性更高，因为结构清晰,十分易于阅读。这也是搜索引擎优化SEO重要的一步。">
+<meta name="twitter:image" content="http://s10.sinaimg.cn/mw690/001Z3Vflgy71PuAfaMF39">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '5.1.3',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://matisha001.github.io/2014/07/13/Web前端面试题汇总/"/>
+
+
+
+
+
+  <title>Web前端面试题汇总 | matisha's Notes</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">matisha's Notes</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">随记</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://matisha001.github.io/2014/07/13/Web前端面试题汇总/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="仰天長嘯歸去來，金戈鐵馬功壹場！">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/matisha.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="matisha's Notes">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">Web前端面试题汇总</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2014-07-13T20:46:25+08:00">
+                2014-07-13
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h3 id="如何理解HTML结构的语义化？"><a href="#如何理解HTML结构的语义化？" class="headerlink" title="如何理解HTML结构的语义化？"></a>如何理解HTML结构的语义化？</h3><p>所谓标签语义化，就是指标签的含义。语义化的主要目的就是让大家直观的认识标签(markup)和属性(attribute)的用途和作用，对搜索引擎友好，有了良好的结构和语义我们的网页内容便自然容易被搜索引擎抓取，这种符合搜索引擎收索规则的做法，网站的推广便可以省下不少的功夫，而且可维护性更高，因为结构清晰,十分易于阅读。这也是搜索引擎优化SEO重要的一步。</p>
+<a id="more"></a>
+<h3 id="html5有哪些新特性"><a href="#html5有哪些新特性" class="headerlink" title="html5有哪些新特性?"></a>html5有哪些新特性?</h3><p>1、绘画的 canvas 元素<br>2、用于媒介回放的 video 和 audio 元素<br>3、对本地离线存储的更好的支持<br>4、新的特殊内容元素，比如：article、footer、header、nav、section<br>5、新的表单控件，比如：calendar、date、time、email、url、search</p>
+<h3 id="移除了那些元素？"><a href="#移除了那些元素？" class="headerlink" title="移除了那些元素？"></a>移除了那些元素？</h3><p>1、纯表现的元素：basefont，big，center，font, s，strike，tt，u；<br>2、对可用性产生负面影响的元素：frame，frameset，noframes；</p>
+<h3 id="如何处理HTML5新标签的浏览器兼容问题？如何区分-HTML-和-HTML5？"><a href="#如何处理HTML5新标签的浏览器兼容问题？如何区分-HTML-和-HTML5？" class="headerlink" title="如何处理HTML5新标签的浏览器兼容问题？如何区分 HTML 和 HTML5？"></a>如何处理HTML5新标签的浏览器兼容问题？如何区分 HTML 和 HTML5？</h3><p>IE8/IE7/IE6支持通过document.createElement方法产生的标签， 可以利用这一特性让这些浏览器支持HTML5新标签， 浏览器支持新标签后，还需要添加标签默认的样式：<br>当然最好的方式是直接使用成熟的框架、使用最多的是html5shim框架<br>如何区分html和html5：<br>DOCTYPE声明\新增的结构元素\功能元素</p>
+<h3 id="清除浮动有几种方式-将多个元素设置为同一行"><a href="#清除浮动有几种方式-将多个元素设置为同一行" class="headerlink" title="清除浮动有几种方式?将多个元素设置为同一行?"></a>清除浮动有几种方式?将多个元素设置为同一行?</h3><p>将多个元素设置为同一行：float，inline-block<br>清除浮动的方式：<br>1、父级div定义 height<br>2、结尾处加空div标签 clear:both<br>3、父级div定义 利用:after和:before来在元素内部插入两个元素块，从面达到清除浮动的效果：<br><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="selector-class">.clear</span>&#123;</div><div class="line">    <span class="attribute">zoom</span>:<span class="number">1</span>;</div><div class="line">&#125;</div><div class="line"><span class="selector-class">.clear</span><span class="selector-pseudo">:after</span>&#123;</div><div class="line">    <span class="attribute">content</span>:””;</div><div class="line">    <span class="attribute">clear</span>:both;</div><div class="line">    <span class="attribute">display</span>:block;</div><div class="line">    <span class="attribute">height</span>:<span class="number">0</span>;</div><div class="line">    <span class="attribute">overflow</span>:hidden;</div><div class="line">    <span class="attribute">visibility</span>:hidden;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>4、父级div定义 overflow:hidden<br>5、父级div定义 overflow:auto<br>6、父级div 也一起浮动<br>7、父级div定义 display:table</p>
+<h3 id="怪异盒模型box-sizing？弹性盒模型-盒布局"><a href="#怪异盒模型box-sizing？弹性盒模型-盒布局" class="headerlink" title="怪异盒模型box-sizing？弹性盒模型|盒布局?"></a>怪异盒模型box-sizing？弹性盒模型|盒布局?</h3><p> 在标准模式下的盒模型：盒子总宽度/高度=width/height+padding+border+margin<br>在怪异模式下的盒模型下，盒子的总宽度和高度是包含内边距padding和边框border宽度在内的，盒子总宽度/高度=width/height + margin = 内容区宽度/高度 + padding + border + margin;<br>box-sizing有两个值一个是content-box，另一个是border-box。<br>当设置为box-sizing:content-box时，将采用标准模式解析计算；<br>当设置为box-sizing:border-box时，将采用怪异模式解析计算。</p>
+<h3 id="a点击出现框，解决方法"><a href="#a点击出现框，解决方法" class="headerlink" title="a点击出现框，解决方法:"></a>a点击出现框，解决方法:</h3><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">a</span>,<span class="selector-tag">a</span><span class="selector-pseudo">:hover</span>,<span class="selector-tag">a</span><span class="selector-pseudo">:active</span>,<span class="selector-tag">a</span><span class="selector-pseudo">:visited</span>,<span class="selector-tag">a</span><span class="selector-pseudo">:link</span>,<span class="selector-tag">a</span><span class="selector-pseudo">:focus</span>&#123; </div><div class="line">    <span class="attribute">-webkit-tap-highlight-color</span>:<span class="built_in">rgba</span>(0,0,0,0);</div><div class="line">    <span class="attribute">-webkit-tap-highlight-color</span>: transparent;</div><div class="line">    <span class="attribute">outline</span>:none;<span class="attribute">background</span>: none;</div><div class="line">    <span class="attribute">text-decoration</span>: none;<span class="attribute">border</span>:none;</div><div class="line">    <span class="attribute">-webkit-appearance</span>: none; </div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="图片和文字在同一行显示"><a href="#图片和文字在同一行显示" class="headerlink" title="图片和文字在同一行显示?"></a>图片和文字在同一行显示?</h3><p>1、在css中给div添加上“vertical-align:middle”属性。<br>2、分别把图片和文字放入不同的div中，然后用“margin”属性进行定位，就可以使他们显示在同一行。<br>3、把图片设置为背景图片。</p>
+<h3 id="常见兼容性问题？"><a href="#常见兼容性问题？" class="headerlink" title="常见兼容性问题？"></a>常见兼容性问题？</h3><p>1、png24位的图片在iE6浏览器上出现背景，解决方案是做成PNG8.也可以引用一段脚本处理。</p>
+<p>2、浏览器默认的margin和padding不同。解决方案是加一个全局的*{margin:0;padding:0;}来统一。</p>
+<p>3、IE6双边距bug:块属性标签float后，又有横行的margin情况下，在ie6显示margin比设置的大。</p>
+<p>4、浮动ie产生的双倍距离（IE6双边距问题：在IE6下，如果对元素设置了浮动，同时又设置了margin-left或margin-right，margin值会加倍。） #box{ float:left; width:10px; margin:0 0 0 100px;} 这种情况之下IE会产生20px的距离，解决方案是在float的标签样式控制中加入 ——<em>display:inline;将其转化为行内属性。(</em>这个符号只有ie6会识别)</p>
+<p>5、渐进识别的方式，从总体中逐渐排除局部。 首先，巧妙的使用“\9”这一标记，将IE游览器从所有情况中分离出来。 接着，再次使用“+”将IE8和IE7、IE6分离开来，这样IE8已经独立识别。<br>css// .bb{ background-color:#f1ee18; .background-color:#00deff\9; +background-color:#a200ff; _background-color:#1e0bd1; } </p>
+<p>6、IE下,可以使用获取常规属性的方法来获取自定义属性, 也可以使用getAttribute()获取自定义属性; Firefox下,只能使用getAttribute()获取自定义属性. 解决方法:统一通过getAttribute()获取自定义属性。</p>
+<p>7、IE下,event对象有x,y属性,但是没有pageX,pageY属性; Firefox下,event对象有pageX,pageY属性,但是没有x,y属性. * 解决方法：（条件注释）缺点是在IE浏览器下可能会增加额外的HTTP请求数。</p>
+<p>8、Chrome 中文界面下默认会将小于 12px 的文本强制按照 12px 显示, 可通过加入 CSS 属性 -webkit-text-size-adjust: none; 解决。</p>
+<p>9、超链接访问过后hover样式就不出现了 被点击访问过的超链接样式不在具有hover和active了解决方法是改变CSS属性的排列顺序: L-V-H-A : a:link {} a:visited {} a:hover {} a:active {}</p>
+<p>10、上下margin重合问题<br>ie和ff都存在，相邻的两个div的margin-left和margin-right不会重合，但是margin-top和margin-bottom却会发生重合。<br>解决方法，养成良好的代码编写习惯，同时采用margin-top或者同时采用margin-bottom。</p>
+<p>11、ie6对png图片格式支持不好(引用一段脚本处理)</p>
+<h3 id="怎样去掉选中时的虚线框？"><a href="#怎样去掉选中时的虚线框？" class="headerlink" title="怎样去掉选中时的虚线框？"></a>怎样去掉选中时的虚线框？</h3><p>利用onfocus=”this.blur();”例如：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"#"</span> <span class="attr">onfocus</span>=<span class="string">"this.blur();"</span>&gt;</span>测试<span class="tag">&lt;/<span class="name">a</span>&gt;</span></div></pre></td></tr></table></figure>
+<h3 id="设置图片元素上下垂直居中"><a href="#设置图片元素上下垂直居中" class="headerlink" title="设置图片元素上下垂直居中"></a>设置图片元素上下垂直居中</h3><p>1、diaplay:table-cell（IE6\7不兼容）<br>2、position加margin（IE6不支持）<br><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="selector-class">.wrap</span> <span class="selector-class">.center</span> &#123;</div><div class="line">    <span class="attribute">width</span>: <span class="number">100px</span>;</div><div class="line">    <span class="attribute">height</span>: <span class="number">100px</span>;</div><div class="line">    <span class="attribute">margin</span>: auto;</div><div class="line">    <span class="attribute">position</span>: absolute;</div><div class="line">    <span class="attribute">left</span>: <span class="number">0</span>;</div><div class="line">    <span class="attribute">right</span>: <span class="number">0</span>;</div><div class="line">    <span class="attribute">top</span>: <span class="number">0</span>;</div><div class="line">    <span class="attribute">bottom</span>: <span class="number">0</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>3、position加transform （ie9以下不支持 transform，手机端表现的比较好）<br><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="selector-class">.wrap</span> <span class="selector-class">.center</span> &#123;</div><div class="line">    <span class="attribute">position</span>: absolute;</div><div class="line">    <span class="attribute">top</span>: <span class="number">50%</span>;</div><div class="line">    <span class="attribute">left</span>: <span class="number">50%</span>;</div><div class="line">    <span class="attribute">transform</span>: <span class="built_in">translate</span>(-50%, -50%);</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>4、flex;align-items: center;justify-content: center（移动端首选）<br><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="selector-class">.wrap</span> &#123;</div><div class="line">    <span class="attribute">display</span>: flex;</div><div class="line">    <span class="attribute">align-items</span>: center;</div><div class="line">    <span class="attribute">justify-content</span>: center;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>5、display:flex;margin:auto（移动端首选）<br><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="selector-class">.wrap</span> &#123;</div><div class="line">    <span class="attribute">display</span>: flex;</div><div class="line">&#125;</div><div class="line"><span class="selector-class">.wrap</span> <span class="selector-class">.center</span> &#123;</div><div class="line">    <span class="attribute">margin</span>: auto;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>6、纯position（适用于所有浏览器）<br><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/* 方法一：*/</span></div><div class="line"><span class="selector-class">.wrap</span> <span class="selector-class">.center</span> &#123;</div><div class="line">    <span class="attribute">position</span>: absolute;</div><div class="line">    <span class="attribute">width</span>: <span class="number">100px</span>;</div><div class="line">    <span class="attribute">height</span>: <span class="number">100px</span>;</div><div class="line">    <span class="attribute">left</span>: <span class="number">50px</span>;<span class="comment">/*left=(父元素的宽 - 子元素的宽 ) / 2 */</span></div><div class="line">    <span class="attribute">top</span>: <span class="number">50px</span>;<span class="comment">/*top=(父元素的高 - 子元素的高 ) / 2 */</span></div><div class="line">&#125;</div><div class="line"><span class="comment">/* 方法二：*/</span></div><div class="line"><span class="selector-class">.wrap</span> <span class="selector-class">.center</span> &#123;</div><div class="line">    <span class="attribute">background</span>: green;</div><div class="line">    <span class="attribute">position</span>: absolute;</div><div class="line">    <span class="attribute">width</span>: <span class="number">100px</span>;</div><div class="line">    <span class="attribute">height</span>: <span class="number">100px</span>;</div><div class="line">    <span class="attribute">left</span>: <span class="number">50%</span>;<span class="comment">/*left值固定为50% */</span></div><div class="line">    <span class="attribute">top</span>: <span class="number">50%</span>;<span class="comment">/*top固定为50% */</span></div><div class="line">    <span class="attribute">margin-left</span>:-<span class="number">50px</span>;<span class="comment">/*-（子元素的宽/2） */</span></div><div class="line">　  <span class="attribute">margin-top</span>:-<span class="number">50px</span>;<span class="comment">/*-（子元素的高/2） */</span></div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<h3 id="px-em-rem有什么区别？-为什么通常给font-size-设置的字体为62-5"><a href="#px-em-rem有什么区别？-为什么通常给font-size-设置的字体为62-5" class="headerlink" title="px/em/rem有什么区别？ 为什么通常给font-size 设置的字体为62.5%?"></a>px/em/rem有什么区别？ 为什么通常给font-size 设置的字体为62.5%?</h3><p>相对于当前对象内文本的字体尺寸。如当前对行内文本的字体尺寸未被人为设置，则相对于浏览器的默认字体尺寸。<br>1、em的值并不是固定的；<br>2、em会继承父级元素的字体大小。使用rem为元素设定字体大小时，仍然是相对大小，但相对的只是HTML根元素。这个单位可谓集相对大小和绝对大小的优点于一身，通过它既可以做到只修改根元素就成比例地调整所有字体大小，又可以避免字体大小逐层复合的连锁反应。<br>rem是相对于浏览器进行缩放的。1rem默认是16px，在响应式布局中，一个个除来转换成rem，太麻烦，所以重置rem<br>body{font-size=62.5% } 此时1rem = 10px;若是12px则是1.2rem。</p>
+<h3 id="CSS3有哪些新特性？"><a href="#CSS3有哪些新特性？" class="headerlink" title="CSS3有哪些新特性？"></a>CSS3有哪些新特性？</h3><p>1、边框：border-radius、box-shadow、border-image<br>2、背景：background-size、background-origin<br>3、文本效果：text-shadow、word-wrap<br>4、字体：@font-face规则<br>5、2D转换：translate()、rotate()、scale()、skew()、matrix()<br>6、3D转换：rotateX()、rotateY()<br>7、过渡：transition：transition-property transition-duration transition-timing-function transition-delay<br>8、动画：@keyframes规则<br>@keyframes myfirst {from{}to{}}//定义动画<br>div{animation: myfirst 5s linear 2s infinite alternate;}</p>
+<h3 id="animation对应的属性"><a href="#animation对应的属性" class="headerlink" title="animation对应的属性"></a>animation对应的属性</h3><blockquote>
+<p>写法：animation: name duration timing-function delay iteration-count direction;</p>
+</blockquote>
+<p>下面是对应的属性的介绍<br>animation-name 规定需要绑定到选择器的 keyframe 名称。<br>animation-duration 规定完成动画所花费的时间，以秒或毫秒计。<br>animation-timing-function 规定动画的速度曲线。<br>animation-delay 规定在动画开始之前的延迟。<br>animation-iteration-count 规定动画应该播放的次数。<br>animation-direction 规定是否应该轮流反向播放动画。</p>
+<h3 id="伪类选择器和伪元素？CSS3中引入的伪类选择器有？CSS3中伪元素有"><a href="#伪类选择器和伪元素？CSS3中引入的伪类选择器有？CSS3中伪元素有" class="headerlink" title="伪类选择器和伪元素？CSS3中引入的伪类选择器有？CSS3中伪元素有?"></a>伪类选择器和伪元素？CSS3中引入的伪类选择器有？CSS3中伪元素有?</h3><p>伪类用一个冒号来表示，而伪元素则用两个冒号来表示。<br><strong>伪类选择器：</strong><br>由于状态是动态变化的，所以一个元素达到一个特定状态时，它可能得到一个伪类的样式；当状态改变时，它又会失去这个样式。<br><strong>伪元素选择器：</strong><br>并不是针对真正的元素使用的选择器，而是针对CSS中已经定义好的伪元素使用的选择器；<br><strong>CSS3中引入的伪类选择器：</strong><br>:root()选择器，根选择器，匹配元素E所在文档的根元素。在HTML文档中，根元素始终是<html>。:root选择器等同于<html>元素。</html></html></p>
+<p>:not()选择器称为否定选择器，和jQuery中的:not选择器一模一样，可以选择除某个元素之外的所有元素。</p>
+<p>:empty()选择器表示的就是空。用来选择没有任何内容的元素，这里没有内容指的是一点内容都没有，哪怕是一个空格。</p>
+<p>:target()选择器来对页面某个target元素(该元素的id被当做页面中的超链接来使用)指定样式，该样式只在用户点击了页面中的超链接，并且跳转到target元素后起作用。</p>
+<p>:first-child()选择器表示的是选择父元素的第一个子元素的元素E。简单点理解就是选择元素中的第一个子元素，记住是子元素，而不是后代元素。</p>
+<p>:nth-child()选择某个元素的一个或多个特定的子元素。</p>
+<p>:nth-last-child()从某父元素的最后一个子元素开始计算，来选择特定的元素</p>
+<p>:nth-of-type(n)选择器和:nth-child(n)选择器非常类似，不同的是它只计算父元素中指定的某种类型的子元素。</p>
+<p>:only-child表示的是一个元素是它的父元素的唯一一个子元素。</p>
+<p>:first-line为某个元素的第一行文字使用样式。</p>
+<p>:first-letter 为某个元素中的文字的首字母或第一个字使用样式。</p>
+<p>:before 在某个元素之前插入一些内容。</p>
+<p>:after 在某个元素之后插入一些内容。 </p>
+<p><strong>CSS3中伪元素：</strong></p>
+<blockquote>
+<p>::first-line选择元素的第一行，比如说改变每个段落的第一行文本的样式</p>
+<p>::before和::after这两个主要用来给元素的前面或后面插入内容，这两个常用”content”配合使用，见过最多的就是清除浮动</p>
+<p>::selection用来改变浏览网页选中文的默认效果</p>
+</blockquote>
+<h3 id="简述前端优化的方式"><a href="#简述前端优化的方式" class="headerlink" title="简述前端优化的方式"></a>简述前端优化的方式</h3><p>1、尽量减少HTTP请求次数<br>2、减少DNS查找次数<br>3、避免跳转<br>4、可缓存的AJAX<br>5、推迟加载内容<br>6、预加载<br>7、减少DOM元素数量<br>8、根据域名划分页面内容<br>9、使iframe的数量最小<br>10、不要出现404错误<br>11、使用内容分发网络<br>12、为文件头指定Expires或Cache-Control<br>13、Gzip压缩文件内容<br>14、配置ETag<br>15、尽早刷新输出缓冲<br>16、使用GET来完成AJAX请求<br>17、把样式表置于顶部<br>18、避免使用CSS表达式（Expression）<br>19、使用外部JavaScript和CSS<br>20、削减JavaScript和CSS<br>21、用<link>代替@import<br>22、避免使用滤镜<br>23、把脚本置于页面底部<br>24、剔除重复脚本</p>
+<h3 id="你如何对网站的文件和资源进行优化？"><a href="#你如何对网站的文件和资源进行优化？" class="headerlink" title="你如何对网站的文件和资源进行优化？"></a>你如何对网站的文件和资源进行优化？</h3><blockquote>
+<p>文件合并<br>文件最小化/文件压缩<br>使用CDN托管<br>缓存的使用</p>
+</blockquote>
+<h3 id="为什么利用多个域名来提供网站资源会更有效？"><a href="#为什么利用多个域名来提供网站资源会更有效？" class="headerlink" title="为什么利用多个域名来提供网站资源会更有效？"></a>为什么利用多个域名来提供网站资源会更有效？</h3><p>1、CDN缓存更方便<br>2、突破浏览器并发限制（一般每个域名建立的链接不超过6个）<br>3、Cookieless，节省带宽，尤其是上行带宽一般比下行要慢<br>4、对于UGC的内容和主站隔离，防止不必要的安全问题(上传js窃取主站cookie之类的)。正是这个原因要求用户内容的域名必须不是自己主站的子域名，而是一个完全独立的第三方域名。<br>5、数据做了划分，甚至切到了不同的物理集群，通过子域名来分流比较省事。这个可能被用的不多。<br>PS:关于Cookie的问题，带宽是次要的，安全隔离才是主要的。关于多域名，也不是越多越好，虽然服务器端可以做泛解释，浏览器做dns解释也是耗时间的，而且太多域名，如果要走https的话，还有要多买证书和部署的问题。</p>
+<h3 id="请说出三种减少页面加载时间的方法"><a href="#请说出三种减少页面加载时间的方法" class="headerlink" title="请说出三种减少页面加载时间的方法"></a>请说出三种减少页面加载时间的方法</h3><p>1、优化图片<br>2、图像格式的选择（GIF：提供的颜色较少，可用在一些对颜色要求不高的地方）<br>3、优化CSS（压缩合并css，如margin-top,margin-left…)<br>4、网址后加斜杠（如www.campr.com/目录，会判断这个“目录是什么文件类型，或者是目录。）<br>5、标明高度和宽度（如果浏览器没有找到这两个参数，它需要一边下载图片一边计算大小，如果图片很多，浏览器需要不断地调整页面。这不但影响速度，也影响浏览体验。当浏览器知道了高度和宽度参数后，即使图片暂时无法显示，页面上也会腾出图片的空位，然后继续加载后面的内容。从而加载时间快了，浏览体验也更好了。）<br>6、减少http请求（合并文件，合并图片）。</p>
+<h3 id="解释下JavaScript中this是如何工作的"><a href="#解释下JavaScript中this是如何工作的" class="headerlink" title="解释下JavaScript中this是如何工作的"></a>解释下JavaScript中this是如何工作的</h3><p>this永远指向函数运行时所在的对象，而不是函数被创建时所在的对象。匿名函数或不处于任何对象中的函数指向window 。</p>
+<p>1、如果是call，apply,with，指定的this是谁，就是谁。<br>2、普通的函数调用，函数被谁调用，this就是谁。</p>
+<h3 id="解释下原型继承的原理"><a href="#解释下原型继承的原理" class="headerlink" title="解释下原型继承的原理"></a>解释下原型继承的原理</h3><p>以下代码展示了JS引擎如何查找属性：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">getProperty</span>(<span class="params">obj,prop</span>) </span>&#123;</div><div class="line">    <span class="keyword">if</span> (obj.hasOwnProperty(prop)) &#123;</div><div class="line">        <span class="keyword">return</span> obj[prop];</div><div class="line">    &#125; <span class="keyword">else</span> <span class="keyword">if</span> (obj.__proto__!==<span class="literal">null</span>) &#123;</div><div class="line">        <span class="keyword">return</span> getProperty(obj.__proto__,prop);</div><div class="line">    &#125; <span class="keyword">else</span> &#123;</div><div class="line">        <span class="keyword">return</span> <span class="literal">undefined</span>;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p><img src="http://s10.sinaimg.cn/mw690/001Z3Vflgy71PuAfaMF39" alt="image"></p>
+<h3 id="事件绑定与冒泡机制"><a href="#事件绑定与冒泡机制" class="headerlink" title="事件绑定与冒泡机制"></a>事件绑定与冒泡机制</h3><h3 id="Ajax"><a href="#Ajax" class="headerlink" title="Ajax"></a>Ajax</h3><blockquote>
+<p>XMLHttpRequest对象</p>
+</blockquote>
+<h3 id="Jsonp"><a href="#Jsonp" class="headerlink" title="Jsonp"></a>Jsonp</h3><h3 id="一道js基础综合题"><a href="#一道js基础综合题" class="headerlink" title="一道js基础综合题"></a>一道js基础综合题</h3><blockquote>
+<p>此题涉及的知识点众多，包括变量定义提升、this指针指向、运算符优先级、原型、继承、全局变量污染、对象属性及原型属性优先级等等。</p>
+</blockquote>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">Foo</span>(<span class="params"></span>) </span>&#123;</div><div class="line">    getName = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123; alert (<span class="number">1</span>); &#125;;</div><div class="line">    <span class="keyword">return</span> <span class="keyword">this</span>;</div><div class="line">&#125;</div><div class="line">Foo.getName = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123; alert (<span class="number">2</span>);&#125;;</div><div class="line">Foo.prototype.getName = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123; alert (<span class="number">3</span>);&#125;;</div><div class="line"><span class="keyword">var</span> getName = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123; alert (<span class="number">4</span>);&#125;;</div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">getName</span>(<span class="params"></span>) </span>&#123; alert (<span class="number">5</span>);&#125;</div><div class="line"></div><div class="line"><span class="comment">//请写出以下输出结果：</span></div><div class="line">Foo.getName();<span class="comment">//2</span></div><div class="line">getName();<span class="comment">//4</span></div><div class="line">Foo().getName();<span class="comment">//1</span></div><div class="line">getName();<span class="comment">//1</span></div><div class="line"><span class="keyword">new</span> Foo.getName();<span class="comment">//2</span></div><div class="line"><span class="keyword">new</span> Foo().getName();<span class="comment">//3</span></div><div class="line"><span class="keyword">new</span> <span class="keyword">new</span> Foo().getName();<span class="comment">//3</span></div></pre></td></tr></table></figure>
+<p><a href="http://www.cnblogs.com/xxcanghai/p/5189353.html" target="_blank" rel="external">http://www.cnblogs.com/xxcanghai/p/5189353.html</a></p>
+<h3 id="TCP三次握手和四次挥手"><a href="#TCP三次握手和四次挥手" class="headerlink" title="TCP三次握手和四次挥手"></a>TCP三次握手和四次挥手</h3><p><strong>三次握手：</strong></p>
+<blockquote>
+<p>第一次握手：建立连接时，客户端A发生SYN包（SYN=j）到服务器B,并进入SYN_SEND状态，等待服务器B确认；<br>第二次握手：服务器B收到SYN包，必须确认客户A的SYN，ACK=j+1,同时自己也发送一个SYN包，SYN=k 即，SYN+ACK包，此时服务器进入SYN_RECV状态；<br>第三次握手：客户端A收到服务器B的SYN+ACK包,向服务器B发送确认包ACK(ACK=k+1),此包发送完毕，客户端A和服务器B进入ESTABLISHED状态，完成三次握手。</p>
+</blockquote>
+<p><strong>四次挥手：</strong></p>
+<blockquote>
+<p>客户端A发送一个FIN.用来关闭客户A到服务器B的数据传送(报文段4)；<br>服务器B收到这个FIN. 它发回一个ACK，确认序号为收到的序号+1（报文段5）。和SYN一样，一个FIN将占用一个序号；<br>服务器B关闭与客户端A的连接，发送一个FIN给客户端A（报文段6）；<br>客户端A发回ACK报文确认，并将确认序号设置为序号加1（报文段7）。</p>
+</blockquote>
+<h3 id="输入URL到展现页面的全过程"><a href="#输入URL到展现页面的全过程" class="headerlink" title="输入URL到展现页面的全过程"></a>输入URL到展现页面的全过程</h3><p>1、域名解析<br>2、建立TCP连接<br>3、发起HTTP请求<br>4、服务器响应HTTP请求<br>5、浏览器渲染页面</p>
+<h3 id="Http协议"><a href="#Http协议" class="headerlink" title="Http协议"></a>Http协议</h3>
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/HTML/" rel="tag"># HTML</a>
+          
+            <a href="/tags/CSS/" rel="tag"># CSS</a>
+          
+            <a href="/tags/javascript/" rel="tag"># javascript</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2014/09/20/变量、作用域和内存问题/" rel="prev" title="变量、作用域和内存问题">
+                变量、作用域和内存问题 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/images/matisha.jpg"
+                alt="仰天長嘯歸去來，金戈鐵馬功壹場！" />
+            
+              <p class="site-author-name" itemprop="name">仰天長嘯歸去來，金戈鐵馬功壹場！</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">18</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">9</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          <div class="links-of-author motion-element">
+            
+              
+                <span class="links-of-author-item">
+                  <a href="https://github.com/matisha001" target="_blank" title="GitHub">
+                    
+                      <i class="fa fa-fw fa-github"></i>GitHub</a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="mailto:matisha001@163.com" target="_blank" title="E-Mail">
+                    
+                      <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                </span>
+              
+            
+          </div>
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#如何理解HTML结构的语义化？"><span class="nav-number">1.</span> <span class="nav-text">如何理解HTML结构的语义化？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#html5有哪些新特性"><span class="nav-number">2.</span> <span class="nav-text">html5有哪些新特性?</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#移除了那些元素？"><span class="nav-number">3.</span> <span class="nav-text">移除了那些元素？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#如何处理HTML5新标签的浏览器兼容问题？如何区分-HTML-和-HTML5？"><span class="nav-number">4.</span> <span class="nav-text">如何处理HTML5新标签的浏览器兼容问题？如何区分 HTML 和 HTML5？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#清除浮动有几种方式-将多个元素设置为同一行"><span class="nav-number">5.</span> <span class="nav-text">清除浮动有几种方式?将多个元素设置为同一行?</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#怪异盒模型box-sizing？弹性盒模型-盒布局"><span class="nav-number">6.</span> <span class="nav-text">怪异盒模型box-sizing？弹性盒模型|盒布局?</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#a点击出现框，解决方法"><span class="nav-number">7.</span> <span class="nav-text">a点击出现框，解决方法:</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#图片和文字在同一行显示"><span class="nav-number">8.</span> <span class="nav-text">图片和文字在同一行显示?</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#常见兼容性问题？"><span class="nav-number">9.</span> <span class="nav-text">常见兼容性问题？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#怎样去掉选中时的虚线框？"><span class="nav-number">10.</span> <span class="nav-text">怎样去掉选中时的虚线框？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#设置图片元素上下垂直居中"><span class="nav-number">11.</span> <span class="nav-text">设置图片元素上下垂直居中</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#px-em-rem有什么区别？-为什么通常给font-size-设置的字体为62-5"><span class="nav-number">12.</span> <span class="nav-text">px/em/rem有什么区别？ 为什么通常给font-size 设置的字体为62.5%?</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#CSS3有哪些新特性？"><span class="nav-number">13.</span> <span class="nav-text">CSS3有哪些新特性？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#animation对应的属性"><span class="nav-number">14.</span> <span class="nav-text">animation对应的属性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#伪类选择器和伪元素？CSS3中引入的伪类选择器有？CSS3中伪元素有"><span class="nav-number">15.</span> <span class="nav-text">伪类选择器和伪元素？CSS3中引入的伪类选择器有？CSS3中伪元素有?</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#简述前端优化的方式"><span class="nav-number">16.</span> <span class="nav-text">简述前端优化的方式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#你如何对网站的文件和资源进行优化？"><span class="nav-number">17.</span> <span class="nav-text">你如何对网站的文件和资源进行优化？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#为什么利用多个域名来提供网站资源会更有效？"><span class="nav-number">18.</span> <span class="nav-text">为什么利用多个域名来提供网站资源会更有效？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#请说出三种减少页面加载时间的方法"><span class="nav-number">19.</span> <span class="nav-text">请说出三种减少页面加载时间的方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#解释下JavaScript中this是如何工作的"><span class="nav-number">20.</span> <span class="nav-text">解释下JavaScript中this是如何工作的</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#解释下原型继承的原理"><span class="nav-number">21.</span> <span class="nav-text">解释下原型继承的原理</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#事件绑定与冒泡机制"><span class="nav-number">22.</span> <span class="nav-text">事件绑定与冒泡机制</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Ajax"><span class="nav-number">23.</span> <span class="nav-text">Ajax</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Jsonp"><span class="nav-number">24.</span> <span class="nav-text">Jsonp</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#一道js基础综合题"><span class="nav-number">25.</span> <span class="nav-text">一道js基础综合题</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#TCP三次握手和四次挥手"><span class="nav-number">26.</span> <span class="nav-text">TCP三次握手和四次挥手</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#输入URL到展现页面的全过程"><span class="nav-number">27.</span> <span class="nav-text">输入URL到展现页面的全过程</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Http协议"><span class="nav-number">28.</span> <span class="nav-text">Http协议</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2014-2017</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">仰天長嘯歸去來，金戈鐵馬功壹場！</span>
+
+  
+</div>
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.3"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.3"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.3"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.3"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.3"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.3"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.3"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

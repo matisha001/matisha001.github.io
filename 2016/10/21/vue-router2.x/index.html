@@ -1,0 +1,794 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.3" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.3">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.3">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.3">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.3" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="javascript,frame,vue,vue-router," />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="matisha's Notes" type="application/atom+xml" />
+
+
+
+
+
+
+<meta name="description" content="基本写法在vue-router2.x中使用v-link 指令已经被  组件替代。  当  对应的路由匹配成功，将自动设置 class 属性值 .router-link-active。     动态路由的匹配   嵌套路由   在vue-rouer0.7x中，子路由用subRoutes。  编程式的导航 router.push(location)      router.replace(locati">
+<meta name="keywords" content="javascript,frame,vue,vue-router">
+<meta property="og:type" content="article">
+<meta property="og:title" content="vue-router2.x">
+<meta property="og:url" content="https://matisha001.github.io/2016/10/21/vue-router2.x/index.html">
+<meta property="og:site_name" content="matisha&#39;s Notes">
+<meta property="og:description" content="基本写法在vue-router2.x中使用v-link 指令已经被  组件替代。  当  对应的路由匹配成功，将自动设置 class 属性值 .router-link-active。     动态路由的匹配   嵌套路由   在vue-rouer0.7x中，子路由用subRoutes。  编程式的导航 router.push(location)      router.replace(locati">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://note.youdao.com/yws/res/2946/C5AC7BFABBE54BEC9C6F9C1FD299422B">
+<meta property="og:image" content="http://note.youdao.com/yws/res/2965/6274DED77A5E4A038FA14442CE4C7CAC">
+<meta property="og:image" content="http://note.youdao.com/yws/res/2968/B28F389F5C8E47DA894D78726D9FB3B5">
+<meta property="og:image" content="http://note.youdao.com/yws/res/2970/A9FBED3A15764655951E550A4755FF6A">
+<meta property="og:image" content="http://note.youdao.com/yws/res/2972/D6A0EBE67F0C44328387C55A40AF43E3">
+<meta property="og:image" content="http://note.youdao.com/yws/res/2977/1D37DB31749540C2B2E0398B33CF8364">
+<meta property="og:image" content="http://note.youdao.com/yws/res/2982/F2F4A6F449824E4EBC7AD746C50349DB">
+<meta property="og:image" content="http://note.youdao.com/yws/res/2981/85F978ED29E1434AB670111378ACC191">
+<meta property="og:image" content="http://note.youdao.com/yws/res/2985/B43AD070CBD649E28BA1BBB52C49FDCE">
+<meta property="og:image" content="http://note.youdao.com/yws/res/2988/33729C1EBC4B4B54856938C0E3953557">
+<meta property="og:image" content="http://note.youdao.com/yws/res/2995/6083B85E020F48B68E8D64075C4ECCDC">
+<meta property="og:image" content="http://note.youdao.com/yws/res/2997/A51384F60CBA4F91B5826F60C9C9A4B6">
+<meta property="og:image" content="http://note.youdao.com/yws/res/3002/1698F38B082A411B9297F1C1B8BFC4C7">
+<meta property="og:image" content="http://note.youdao.com/yws/res/3004/895C265CDAA042839CD0AB8591AE57F1">
+<meta property="og:image" content="http://note.youdao.com/yws/res/3008/C9C38B563407464FB7230D9871A595EB">
+<meta property="og:image" content="http://note.youdao.com/yws/res/3013/C8762E3BE8B14513ABB9EE2C0B3DC5FD">
+<meta property="og:image" content="http://note.youdao.com/yws/res/3015/7165CFF4B76A44A8954CF6F3A3AED763">
+<meta property="og:image" content="http://note.youdao.com/yws/res/3017/385294F604A744BF8FBC155EE9D97162">
+<meta property="og:image" content="http://note.youdao.com/yws/res/3022/5AA4BAB9EBD7420EB2FF7F43C82D66D2">
+<meta property="og:image" content="http://note.youdao.com/yws/res/3024/0FA2DADB5C294E70A31DE5A657CC4874">
+<meta property="og:image" content="http://note.youdao.com/yws/res/3026/F69A299302CC45A6A7833C2AFA8DF39C">
+<meta property="og:image" content="http://note.youdao.com/yws/res/3028/5C6B8C56EA7645EEB582B3CBFC771F7C">
+<meta property="og:image" content="http://note.youdao.com/yws/res/3033/6780F81C4551452FB79B8EEB7492A0B5">
+<meta property="og:image" content="http://note.youdao.com/yws/res/3035/6FA4FA88243A4F48B6CBAF7C20CE6E0C">
+<meta property="og:image" content="http://note.youdao.com/yws/res/3038/7E34CB88E6FE4E5581E6A5E3696F1629">
+<meta property="og:image" content="http://note.youdao.com/yws/res/3041/B57C389FA54E4A079B44687AB544F49E">
+<meta property="og:image" content="http://note.youdao.com/yws/res/3044/E5E1D442454041DE811778D38CD9ACCF">
+<meta property="og:image" content="http://note.youdao.com/yws/res/3046/21B3A8718F1542E58729C057D07C9C4B">
+<meta property="og:image" content="http://note.youdao.com/yws/res/3051/E55E20AF7A1D40E6A002F48E2A1E97B3">
+<meta property="og:image" content="http://note.youdao.com/yws/res/3057/D342AD7A23E34711ACD7A559323FF0FB">
+<meta property="og:image" content="http://note.youdao.com/yws/res/3059/D46D4D6FBFF74F4D83291CF7FD3ED97C">
+<meta property="og:image" content="http://note.youdao.com/yws/res/3064/069ED312D7E24B16A13FE853DD21A40D">
+<meta property="og:image" content="http://note.youdao.com/yws/res/3067/4E669B9DC36B4DE98812361799E1028F">
+<meta property="og:image" content="http://note.youdao.com/yws/res/3071/94906A03CA0B475B848818139F2B4676">
+<meta property="og:image" content="http://note.youdao.com/yws/res/3073/33CBC4A3E54F421FBE3D96612F58F996">
+<meta property="og:image" content="http://note.youdao.com/yws/res/3077/9BC1FECBB8AD42788E302776BF7328D7">
+<meta property="og:image" content="http://note.youdao.com/yws/res/3079/CCC143565CF64714B159E43DE2BE15FB">
+<meta property="og:image" content="http://note.youdao.com/yws/res/3081/5E64CA0F992D44348977E9EBB4E24960">
+<meta property="og:image" content="http://note.youdao.com/yws/res/3085/A7A753BF820A4CDEB4888C9AC991B7AE">
+<meta property="og:image" content="http://note.youdao.com/yws/res/3088/DECAA8A466754677B706DA23E1B710A4">
+<meta property="og:image" content="http://note.youdao.com/yws/res/3090/CB92B55532014DFAB4746B7DD203C88C">
+<meta property="og:image" content="http://note.youdao.com/yws/res/3097/A734474E1E9D40C492CE9EB92BD84A7A">
+<meta property="og:image" content="http://note.youdao.com/yws/res/3102/74F0496BBFF746DA9E226410E58A0F22">
+<meta property="og:updated_time" content="2017-10-05T19:59:13.629Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="vue-router2.x">
+<meta name="twitter:description" content="基本写法在vue-router2.x中使用v-link 指令已经被  组件替代。  当  对应的路由匹配成功，将自动设置 class 属性值 .router-link-active。     动态路由的匹配   嵌套路由   在vue-rouer0.7x中，子路由用subRoutes。  编程式的导航 router.push(location)      router.replace(locati">
+<meta name="twitter:image" content="http://note.youdao.com/yws/res/2946/C5AC7BFABBE54BEC9C6F9C1FD299422B">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '5.1.3',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://matisha001.github.io/2016/10/21/vue-router2.x/"/>
+
+
+
+
+
+  <title>vue-router2.x | matisha's Notes</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">matisha's Notes</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">随记</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://matisha001.github.io/2016/10/21/vue-router2.x/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="仰天長嘯歸去來，金戈鐵馬功壹場！">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/matisha.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="matisha's Notes">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">vue-router2.x</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-10-21T00:34:14+08:00">
+                2016-10-21
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h3 id="基本写法"><a href="#基本写法" class="headerlink" title="基本写法"></a>基本写法</h3><p>在vue-router2.x中使用v-link 指令已经被 <router-link> 组件替代。</router-link></p>
+<p><img src="http://note.youdao.com/yws/res/2946/C5AC7BFABBE54BEC9C6F9C1FD299422B" alt="image"></p>
+<p>当 <router-link> 对应的路由匹配成功，将自动设置 class 属性值 .router-link-active。</router-link></p>
+<p><img src="http://note.youdao.com/yws/res/2965/6274DED77A5E4A038FA14442CE4C7CAC" alt="image"></p>
+<p><img src="http://note.youdao.com/yws/res/2968/B28F389F5C8E47DA894D78726D9FB3B5" alt="image"></p>
+<p><img src="http://note.youdao.com/yws/res/2970/A9FBED3A15764655951E550A4755FF6A" alt="image"></p>
+<p><img src="http://note.youdao.com/yws/res/2972/D6A0EBE67F0C44328387C55A40AF43E3" alt="image"></p>
+<h3 id="动态路由的匹配"><a href="#动态路由的匹配" class="headerlink" title="动态路由的匹配"></a>动态路由的匹配</h3><p><img src="http://note.youdao.com/yws/res/2977/1D37DB31749540C2B2E0398B33CF8364" alt="image"></p>
+<p><img src="http://note.youdao.com/yws/res/2982/F2F4A6F449824E4EBC7AD746C50349DB" alt="image"></p>
+<p><img src="http://note.youdao.com/yws/res/2981/85F978ED29E1434AB670111378ACC191" alt="image"></p>
+<h3 id="嵌套路由"><a href="#嵌套路由" class="headerlink" title="嵌套路由"></a>嵌套路由</h3><p><img src="http://note.youdao.com/yws/res/2985/B43AD070CBD649E28BA1BBB52C49FDCE" alt="image"></p>
+<p><img src="http://note.youdao.com/yws/res/2988/33729C1EBC4B4B54856938C0E3953557" alt="image"></p>
+<blockquote>
+<p>在vue-rouer0.7x中，子路由用subRoutes。</p>
+</blockquote>
+<h3 id="编程式的导航"><a href="#编程式的导航" class="headerlink" title="编程式的导航"></a>编程式的导航</h3><p> router.push(location)</p>
+<p> <img src="http://note.youdao.com/yws/res/2995/6083B85E020F48B68E8D64075C4ECCDC" alt="image"></p>
+<p> <img src="http://note.youdao.com/yws/res/2997/A51384F60CBA4F91B5826F60C9C9A4B6" alt="image"></p>
+<p> router.replace(location)</p>
+<p> <img src="http://note.youdao.com/yws/res/3002/1698F38B082A411B9297F1C1B8BFC4C7" alt="image"></p>
+<p> <img src="http://note.youdao.com/yws/res/3004/895C265CDAA042839CD0AB8591AE57F1" alt="image"></p>
+<p> <img src="http://note.youdao.com/yws/res/3008/C9C38B563407464FB7230D9871A595EB" alt="image"></p>
+<h3 id="命名路由"><a href="#命名路由" class="headerlink" title="命名路由"></a>命名路由</h3><p><img src="http://note.youdao.com/yws/res/3013/C8762E3BE8B14513ABB9EE2C0B3DC5FD" alt="image"></p>
+<p><img src="http://note.youdao.com/yws/res/3015/7165CFF4B76A44A8954CF6F3A3AED763" alt="image"></p>
+<p><img src="http://note.youdao.com/yws/res/3017/385294F604A744BF8FBC155EE9D97162" alt="image"></p>
+<h3 id="命名视图"><a href="#命名视图" class="headerlink" title="命名视图"></a>命名视图</h3><p><img src="http://note.youdao.com/yws/res/3022/5AA4BAB9EBD7420EB2FF7F43C82D66D2" alt="image"></p>
+<p><img src="http://note.youdao.com/yws/res/3024/0FA2DADB5C294E70A31DE5A657CC4874" alt="image"></p>
+<p><img src="http://note.youdao.com/yws/res/3026/F69A299302CC45A6A7833C2AFA8DF39C" alt="image"></p>
+<p><img src="http://note.youdao.com/yws/res/3028/5C6B8C56EA7645EEB582B3CBFC771F7C" alt="image"></p>
+<h3 id="重定向和别名"><a href="#重定向和别名" class="headerlink" title="重定向和别名"></a>重定向和别名</h3><p><img src="http://note.youdao.com/yws/res/3033/6780F81C4551452FB79B8EEB7492A0B5" alt="image"></p>
+<p><img src="http://note.youdao.com/yws/res/3035/6FA4FA88243A4F48B6CBAF7C20CE6E0C" alt="image"></p>
+<h3 id="HTML5-History-模式"><a href="#HTML5-History-模式" class="headerlink" title="HTML5 History 模式"></a>HTML5 History 模式</h3><p><img src="http://note.youdao.com/yws/res/3038/7E34CB88E6FE4E5581E6A5E3696F1629" alt="image"></p>
+<h3 id="全局钩子"><a href="#全局钩子" class="headerlink" title="全局钩子"></a>全局钩子</h3><p><img src="http://note.youdao.com/yws/res/3041/B57C389FA54E4A079B44687AB544F49E" alt="image"></p>
+<h3 id="某个路由独享的钩子"><a href="#某个路由独享的钩子" class="headerlink" title="某个路由独享的钩子"></a>某个路由独享的钩子</h3><p><img src="http://note.youdao.com/yws/res/3044/E5E1D442454041DE811778D38CD9ACCF" alt="image"></p>
+<p><img src="http://note.youdao.com/yws/res/3046/21B3A8718F1542E58729C057D07C9C4B" alt="image"></p>
+<h3 id="组件内的钩子"><a href="#组件内的钩子" class="headerlink" title="组件内的钩子"></a>组件内的钩子</h3><p><img src="http://note.youdao.com/yws/res/3051/E55E20AF7A1D40E6A002F48E2A1E97B3" alt="image"></p>
+<ul>
+<li>使用组件自身的生命周期钩子函数来替代activate 和 deactivate</li>
+<li>在$router 上使用 watcher 来响应路由改变 (e.g. 比如基于新的路由参数获取数据)</li>
+<li>canActivate 可以被router 的配置中的 beforeEnter 中实现。</li>
+<li>canDeactivate 已经被 beforeRouteLeave 取代, 后者在一个组件的根级定义中指定。这个钩子函数在调用时是将组件的实例作为其上下文的。</li>
+<li>canReuse 已经被移除，因其容易混淆且很少被用到。</li>
+</ul>
+<h3 id="路由元信息"><a href="#路由元信息" class="headerlink" title="路由元信息"></a>路由元信息</h3><p><img src="http://note.youdao.com/yws/res/3057/D342AD7A23E34711ACD7A559323FF0FB" alt="image"></p>
+<p><img src="http://note.youdao.com/yws/res/3059/D46D4D6FBFF74F4D83291CF7FD3ED97C" alt="image"></p>
+<h3 id="过渡特效"><a href="#过渡特效" class="headerlink" title="过渡特效"></a>过渡特效</h3><p><img src="http://note.youdao.com/yws/res/3064/069ED312D7E24B16A13FE853DD21A40D" alt="image"></p>
+<p><img src="http://note.youdao.com/yws/res/3067/4E669B9DC36B4DE98812361799E1028F" alt="image"></p>
+<h3 id="滚动行为"><a href="#滚动行为" class="headerlink" title="滚动行为"></a>滚动行为</h3><p><img src="http://note.youdao.com/yws/res/3071/94906A03CA0B475B848818139F2B4676" alt="image"></p>
+<p><img src="http://note.youdao.com/yws/res/3073/33CBC4A3E54F421FBE3D96612F58F996" alt="image"></p>
+<p>路由信息对象</p>
+<p><img src="http://note.youdao.com/yws/res/3077/9BC1FECBB8AD42788E302776BF7328D7" alt="image"></p>
+<p><img src="http://note.youdao.com/yws/res/3079/CCC143565CF64714B159E43DE2BE15FB" alt="image"></p>
+<p><img src="http://note.youdao.com/yws/res/3081/5E64CA0F992D44348977E9EBB4E24960" alt="image"></p>
+<p>Router_构造配置<br><img src="http://note.youdao.com/yws/res/3085/A7A753BF820A4CDEB4888C9AC991B7AE" alt="image"></p>
+<p><img src="http://note.youdao.com/yws/res/3088/DECAA8A466754677B706DA23E1B710A4" alt="image"></p>
+<p><img src="http://note.youdao.com/yws/res/3090/CB92B55532014DFAB4746B7DD203C88C" alt="image"></p>
+<h3 id="Router-实例"><a href="#Router-实例" class="headerlink" title="Router_实例"></a>Router_实例</h3><p><img src="http://note.youdao.com/yws/res/3097/A734474E1E9D40C492CE9EB92BD84A7A" alt="image"></p>
+<h3 id="对组件注入"><a href="#对组件注入" class="headerlink" title="对组件注入"></a>对组件注入</h3><p><img src="http://note.youdao.com/yws/res/3102/74F0496BBFF746DA9E226410E58A0F22" alt="image"></p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/javascript/" rel="tag"># javascript</a>
+          
+            <a href="/tags/frame/" rel="tag"># frame</a>
+          
+            <a href="/tags/vue/" rel="tag"># vue</a>
+          
+            <a href="/tags/vue-router/" rel="tag"># vue-router</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/10/20/浏览器的工作原理/" rel="next" title="浏览器的工作原理">
+                <i class="fa fa-chevron-left"></i> 浏览器的工作原理
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2016/10/22/vue2.x指令/" rel="prev" title="vue2.x指令">
+                vue2.x指令 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/images/matisha.jpg"
+                alt="仰天長嘯歸去來，金戈鐵馬功壹場！" />
+            
+              <p class="site-author-name" itemprop="name">仰天長嘯歸去來，金戈鐵馬功壹場！</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">18</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">9</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          <div class="links-of-author motion-element">
+            
+              
+                <span class="links-of-author-item">
+                  <a href="https://github.com/matisha001" target="_blank" title="GitHub">
+                    
+                      <i class="fa fa-fw fa-github"></i>GitHub</a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="mailto:matisha001@163.com" target="_blank" title="E-Mail">
+                    
+                      <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                </span>
+              
+            
+          </div>
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#基本写法"><span class="nav-number">1.</span> <span class="nav-text">基本写法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#动态路由的匹配"><span class="nav-number">2.</span> <span class="nav-text">动态路由的匹配</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#嵌套路由"><span class="nav-number">3.</span> <span class="nav-text">嵌套路由</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#编程式的导航"><span class="nav-number">4.</span> <span class="nav-text">编程式的导航</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#命名路由"><span class="nav-number">5.</span> <span class="nav-text">命名路由</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#命名视图"><span class="nav-number">6.</span> <span class="nav-text">命名视图</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#重定向和别名"><span class="nav-number">7.</span> <span class="nav-text">重定向和别名</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#HTML5-History-模式"><span class="nav-number">8.</span> <span class="nav-text">HTML5 History 模式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#全局钩子"><span class="nav-number">9.</span> <span class="nav-text">全局钩子</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#某个路由独享的钩子"><span class="nav-number">10.</span> <span class="nav-text">某个路由独享的钩子</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#组件内的钩子"><span class="nav-number">11.</span> <span class="nav-text">组件内的钩子</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#路由元信息"><span class="nav-number">12.</span> <span class="nav-text">路由元信息</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#过渡特效"><span class="nav-number">13.</span> <span class="nav-text">过渡特效</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#滚动行为"><span class="nav-number">14.</span> <span class="nav-text">滚动行为</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Router-实例"><span class="nav-number">15.</span> <span class="nav-text">Router_实例</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#对组件注入"><span class="nav-number">16.</span> <span class="nav-text">对组件注入</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2014-2017</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">仰天長嘯歸去來，金戈鐵馬功壹場！</span>
+
+  
+</div>
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.3"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.3"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.3"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.3"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.3"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.3"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.3"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
