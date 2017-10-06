@@ -394,6 +394,133 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://matisha001.github.io/2016/02/10/react实战/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="仰天長嘯歸去來，金戈鐵馬功壹場！">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/matisha.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="matisha001's notes">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2016/02/10/react实战/" itemprop="url">react实战</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-02-10T00:00:00+08:00">
+                2016-02-10
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="环境搭建"><a href="#环境搭建" class="headerlink" title="环境搭建"></a>环境搭建</h2><h3 id="安装依赖"><a href="#安装依赖" class="headerlink" title="安装依赖"></a>安装依赖</h3><blockquote>
+<p>npm  i -g gulp </p>
+<p>npm  i react  –save </p>
+<p>npm  i –save-dev gulp gulp-browserify  gulp-concat gulp-react  lodash  reactify</p>
+<p>bower init </p>
+<p>bower install bootstrap –save</p>
+</blockquote>
+<h3 id="配置gulpfile-js"><a href="#配置gulpfile-js" class="headerlink" title="配置gulpfile.js"></a>配置gulpfile.js</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> gulp = <span class="built_in">require</span>(<span class="string">'gulp'</span>),<span class="comment">//运行任务</span></div><div class="line">	connect = <span class="built_in">require</span>(<span class="string">'gulp-connect'</span>),<span class="comment">//运行connect服务器</span></div><div class="line">	browserify = <span class="built_in">require</span>(<span class="string">'gulp-browserify'</span>),<span class="comment">//将组件拼接在一起,使浏览器代码也可以使用require来构建</span></div><div class="line">	concat = <span class="built_in">require</span>(<span class="string">'gulp-concat'</span>),<span class="comment">//将所有文件拼在一起</span></div><div class="line">	port = process.env.port || <span class="number">5000</span>;</div><div class="line">gulp.task(<span class="string">'browserify'</span>,<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">	gulp.src(<span class="string">'./app/js/main.js'</span>)</div><div class="line">	.pipe(browserify(&#123;</div><div class="line">		transform: <span class="string">'reactify'</span>,</div><div class="line">	&#125;))</div><div class="line">	.pipe(gulp.dest(<span class="string">'./dist/js'</span>))</div><div class="line">&#125;);</div><div class="line"><span class="comment">// live reload </span></div><div class="line">gulp.task(<span class="string">'connect'</span>,<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">	connect.server(&#123;</div><div class="line">		<span class="comment">// root:'./',</span></div><div class="line">		port: port,</div><div class="line">		livereload: <span class="literal">true</span>,</div><div class="line">	&#125;)</div><div class="line">&#125;)</div><div class="line"><span class="comment">// 刷新js </span></div><div class="line">gulp.task(<span class="string">'js'</span>,<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">	gulp.src(<span class="string">'./dist/**/*.js'</span>)</div><div class="line">	.pipe( connect.reload() )</div><div class="line">&#125;)</div><div class="line"><span class="comment">// 刷新html </span></div><div class="line">gulp.task(<span class="string">'html'</span>,<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">	gulp.src(<span class="string">'./app/**/*.html'</span>)</div><div class="line">	.pipe( connect.reload() )</div><div class="line">&#125;);</div><div class="line">gulp.task(<span class="string">'watch'</span>,<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">	gulp.watch(<span class="string">'./dist/**/*.js'</span>,[<span class="string">'js'</span>]);</div><div class="line">	gulp.watch(<span class="string">'./app/**/*.html'</span>,[<span class="string">'html'</span>]);</div><div class="line">	gulp.watch(<span class="string">'./app/js/**/*.js'</span>,[<span class="string">'browserify'</span>]);</div><div class="line">&#125;)</div><div class="line">gulp.task(<span class="string">'default'</span>,[<span class="string">'browserify'</span>]);</div><div class="line">gulp.task(<span class="string">'serve'</span>,[<span class="string">'browserify'</span>,<span class="string">'connect'</span>,<span class="string">'watch'</span>]);</div></pre></td></tr></table></figure>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="https://matisha001.github.io/2016/01/19/react/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -685,7 +812,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">3</span>
+                  <span class="site-state-item-count">4</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -698,7 +825,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">3</span>
+                  <span class="site-state-item-count">4</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
