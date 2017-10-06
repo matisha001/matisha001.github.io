@@ -3,7 +3,7 @@
   <entry>
     <title><![CDATA[webpack的使用]]></title>
     <url>%2F2015%2F03%2F19%2Fwebpack%2F</url>
-    <content type="text"><![CDATA[安装webpack npm i webpack -g webpack –help 使用webpack创建项目 npm init npm i webpack webpack enter.js bundle.js 打包生成的bundle.js包含webpack本身需要的一些东西。 模块依赖 main.js123&gt; var test=require(&apos;./test&apos;);&gt; console.log(test)&gt; test.js12&gt; module.exports=&quot;matisha001&quot;&gt;]]></content>
+    <content type="text"><![CDATA[安装webpack npm i webpack -g webpack –help 使用webpack创建项目 npm init npm i webpack webpack enter.js bundle.js 打包生成的bundle.js包含webpack本身需要的一些东西。 模块依赖 main.js123&gt; var test=require(&apos;./test&apos;);&gt; console.log(test)&gt; test.js12&gt; module.exports=&quot;matisha001&quot;&gt; loader转换器 loader转换器是将资源从一种形式转化为另一种形式，最总转化为js。 常见的转换器123&gt; css-loader、style-loader等&gt; require('style!css!./style.css');&gt; 配置文件 默认的配置文件为webpack.config.js 输入 webpack命令 12345678910111213module.exports = &#123; entry:&apos;./entry.js&apos;,//入口文件 output:&#123;//生成文件 path:__dirname, filename:&apos;bundle.js&apos; &#125;, devtool:&apos;source-map&apos;,//生成source-map文件 module:&#123; //要使用的模块 loaders:[ &#123;test:/\.css$/,loader:&apos;style!css&apos;&#125; ] &#125;&#125;; 调试代码 source-map 生成source-map文件 webpack –devtool source-map test.js123&gt; debugger; //代码打断点&gt; module.exports="matisha001"&gt;]]></content>
       <tags>
         <tag>js</tag>
       </tags>
