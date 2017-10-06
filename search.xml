@@ -1,40 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
-<search> 
-  
-    
-    <entry>
-      <title><![CDATA[webpack的使用]]></title>
-      <url>/2015/03/19/webpack/</url>
-      <content type="html"><![CDATA[<h2 id="安装webpack"><a href="#安装webpack" class="headerlink" title="安装webpack"></a>安装webpack</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">npm i webpack --g</div><div class="line">webpack --help</div></pre></td></tr></table></figure>
-<h2 id="使用webpack创建项目"><a href="#使用webpack创建项目" class="headerlink" title="使用webpack创建项目"></a>使用webpack创建项目</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">npm init </div><div class="line">npm i webpack</div><div class="line">webpack enter.js  bundle.js</div></pre></td></tr></table></figure>
-<p> 打包生成的bundle.js包含webpack本身需要的一些东西。</p>
- <a id="more"></a>
-<h3 id="模块依赖"><a href="#模块依赖" class="headerlink" title="模块依赖"></a>模块依赖</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//main.js</span></div><div class="line"><span class="keyword">var</span> test=<span class="built_in">require</span>(<span class="string">'./test'</span>);</div><div class="line"><span class="built_in">console</span>.log(test)</div></pre></td></tr></table></figure>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//test.js</span></div><div class="line"><span class="built_in">module</span>.exports=<span class="string">"matisha001"</span></div></pre></td></tr></table></figure>
-<h3 id="loader转换器"><a href="#loader转换器" class="headerlink" title="loader转换器"></a>loader转换器</h3><p> loader转换器是将资源从一种形式转化为另一种形式，最总转化为js。</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//常见的转换器</span></div><div class="line">css-loader、style-loader等</div><div class="line"><span class="built_in">require</span>(<span class="string">'style!css!./style.css'</span>);</div></pre></td></tr></table></figure>
-<h3 id="配置文件"><a href="#配置文件" class="headerlink" title="配置文件"></a>配置文件</h3><p>默认的配置文件为webpack.config.js<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">输入 webpack</div></pre></td></tr></table></figure></p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//webpack.config.js</span></div><div class="line"><span class="built_in">module</span>.exports = &#123;</div><div class="line">  entry:<span class="string">'./main.js'</span>,<span class="comment">//入口文件</span></div><div class="line">  output:&#123;<span class="comment">//生成文件</span></div><div class="line">    path:__dirname,</div><div class="line">    filename:<span class="string">'bundle.js'</span></div><div class="line">  &#125;,</div><div class="line">  devtool:<span class="string">'source-map'</span>,<span class="comment">//生成source-map文件</span></div><div class="line">  <span class="built_in">module</span>:&#123; <span class="comment">//要使用的模块</span></div><div class="line">    loaders:[</div><div class="line">      &#123;<span class="attr">test</span>:<span class="regexp">/\.js$/</span>,<span class="attr">loader</span>:<span class="string">'babel'</span>&#125;,</div><div class="line">      &#123;<span class="attr">test</span>:<span class="regexp">/\.css$/</span>,<span class="attr">loader</span>:<span class="string">'style!css'</span>&#125;</div><div class="line">    ]</div><div class="line">  &#125;</div><div class="line">&#125;;</div></pre></td></tr></table></figure>
-<h3 id="调试代码-source-map"><a href="#调试代码-source-map" class="headerlink" title="调试代码 source-map"></a>调试代码 source-map</h3><p>生成source-map文件<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">webpack --devtool source-map</div></pre></td></tr></table></figure></p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//test.js</span></div><div class="line"><span class="keyword">debugger</span>;  <span class="comment">//代码打断点</span></div><div class="line"><span class="built_in">module</span>.exports=<span class="string">"matisha001"</span></div></pre></td></tr></table></figure>
-<h3 id="babel转换"><a href="#babel转换" class="headerlink" title="babel转换"></a>babel转换</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//安装babel依赖</span></div><div class="line">npm i babel-loader  babel-core babel-preset-es2015 --save-dev</div></pre></td></tr></table></figure>
-<figure class="highlight json"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">//创建.babelrc配置文件</div><div class="line">&#123;</div><div class="line">  <span class="attr">"presets"</span>:[<span class="string">"es2015"</span>] //设置babel预设</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//main.js</span></div><div class="line"><span class="keyword">import</span> name <span class="keyword">from</span> <span class="string">'./name'</span>;</div><div class="line"><span class="keyword">export</span> <span class="keyword">default</span> name;</div></pre></td></tr></table></figure>
-<h2 id="webpack插件"><a href="#webpack插件" class="headerlink" title="webpack插件"></a>webpack插件</h2><h3 id="webpack-dev-server"><a href="#webpack-dev-server" class="headerlink" title="webpack-dev-server"></a>webpack-dev-server</h3><p>提供开发服务器、页面刷新、模块热替换(只替换有变化的内容，不需要刷新整个页面)。</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">npm i webpack-dev-server --g</div><div class="line">npm i webpack-dev-server --save-dev</div><div class="line">webpack-dev-server --inline --hot</div></pre></td></tr></table></figure>
-<h2 id="创建react项目"><a href="#创建react项目" class="headerlink" title="创建react项目"></a>创建react项目</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//安装依赖</span></div><div class="line">npm i babel-core babel-preset-es2015 babel-preset-react webpack webpack-dev-server babel-loader react-hot-loader --save-dev</div><div class="line">npm i react react-dom --save</div></pre></td></tr></table></figure>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//webpack.config.js</span></div><div class="line"><span class="built_in">module</span>.exports = &#123;</div><div class="line">  entry:<span class="string">'./main.js'</span>,<span class="comment">//入口文件</span></div><div class="line">  output:&#123;<span class="comment">//生成文件</span></div><div class="line">    path:__dirname,</div><div class="line">    filename:<span class="string">'bundle.js'</span></div><div class="line">  &#125;,</div><div class="line">  devtool:<span class="string">'source-map'</span>,<span class="comment">//生成source-map文件</span></div><div class="line">  <span class="built_in">module</span>:&#123; <span class="comment">//要使用的模块</span></div><div class="line">    loaders:[</div><div class="line">      &#123;</div><div class="line">            test:[<span class="regexp">/\.js$/</span>,/\.jsx?$/],</div><div class="line">            exclude:<span class="regexp">/(node_modules)/</span>,</div><div class="line">            loader:<span class="string">'react-hot!babel'</span></div><div class="line">    </div><div class="line">        &#125;,</div><div class="line">      &#123;<span class="attr">test</span>:<span class="regexp">/\.css$/</span>,<span class="attr">loader</span>:<span class="string">'style!css'</span>&#125;</div><div class="line">    ]</div><div class="line">  &#125;</div><div class="line">&#125;;</div></pre></td></tr></table></figure>
-<figure class="highlight json"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">//创建.babelrc配置文件</div><div class="line">&#123;</div><div class="line">  <span class="attr">"presets"</span>:[<span class="string">"es2015"</span>,<span class="string">"react"</span>] //设置babel预设</div><div class="line">&#125;</div></pre></td></tr></table></figure>]]></content>
-      
-        
-        <tags>
-            
-            <tag> js </tag>
-            
-        </tags>
-        
-    </entry>
-    
-  
-  
+<search>
+  <entry>
+    <title><![CDATA[vue基础]]></title>
+    <url>%2F2016%2F08%2F19%2Fvue%2F</url>
+    <content type="text"></content>
+      <tags>
+        <tag>js</tag>
+        <tag>vue</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[react基础]]></title>
+    <url>%2F2016%2F01%2F19%2Freact%2F</url>
+    <content type="text"></content>
+      <tags>
+        <tag>js</tag>
+        <tag>react</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[webpack的使用]]></title>
+    <url>%2F2015%2F03%2F19%2Fwebpack%2F</url>
+    <content type="text"><![CDATA[安装webpack12npm i webpack --gwebpack --help 使用webpack创建项目123npm init npm i webpackwebpack enter.js bundle.js 打包生成的bundle.js包含webpack本身需要的一些东西。 模块依赖123//main.jsvar test=require('./test');console.log(test) 12//test.jsmodule.exports="matisha001" loader转换器 loader转换器是将资源从一种形式转化为另一种形式，最总转化为js。 123//常见的转换器css-loader、style-loader等require('style!css!./style.css'); 配置文件默认的配置文件为webpack.config.js1输入 webpack 123456789101112131415//webpack.config.jsmodule.exports = &#123; entry:'./main.js',//入口文件 output:&#123;//生成文件 path:__dirname, filename:'bundle.js' &#125;, devtool:'source-map',//生成source-map文件 module:&#123; //要使用的模块 loaders:[ &#123;test:/\.js$/,loader:'babel'&#125;, &#123;test:/\.css$/,loader:'style!css'&#125; ] &#125;&#125;; 调试代码 source-map生成source-map文件1webpack --devtool source-map 123//test.jsdebugger; //代码打断点module.exports="matisha001" babel转换12//安装babel依赖npm i babel-loader babel-core babel-preset-es2015 --save-dev 1234//创建.babelrc配置文件&#123; "presets":["es2015"] //设置babel预设&#125; 123//main.jsimport name from './name';export default name; webpack插件webpack-dev-server提供开发服务器、页面刷新、模块热替换(只替换有变化的内容，不需要刷新整个页面)。 123npm i webpack-dev-server --gnpm i webpack-dev-server --save-devwebpack-dev-server --inline --hot 创建react项目123//安装依赖npm i babel-core babel-preset-es2015 babel-preset-react webpack webpack-dev-server babel-loader react-hot-loader --save-devnpm i react react-dom --save 1234567891011121314151617181920//webpack.config.jsmodule.exports = &#123; entry:'./main.js',//入口文件 output:&#123;//生成文件 path:__dirname, filename:'bundle.js' &#125;, devtool:'source-map',//生成source-map文件 module:&#123; //要使用的模块 loaders:[ &#123; test:[/\.js$/,/\.jsx?$/], exclude:/(node_modules)/, loader:'react-hot!babel' &#125;, &#123;test:/\.css$/,loader:'style!css'&#125; ] &#125;&#125;; 1234//创建.babelrc配置文件&#123; "presets":["es2015","react"] //设置babel预设&#125;]]></content>
+      <tags>
+        <tag>js</tag>
+      </tags>
+  </entry>
 </search>
