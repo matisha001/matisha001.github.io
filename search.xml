@@ -12,7 +12,7 @@
   <entry>
     <title><![CDATA[react基础]]></title>
     <url>%2F2016%2F01%2F19%2Freact%2F</url>
-    <content type="text"></content>
+    <content type="text"><![CDATA[React语法React.render12345React.render( &lt;Component/&gt;, document.getElementById('app'), callback) React.createClass1234567var Component = React.createClass(&#123; render:function()&#123; return ( &lt;div&gt;test&lt;/div&gt; ) &#125;&#125;); React组件组件嵌套 react组件的嵌套必须在外面用一个标签包裹起来 父组件在传递一个数组的时候,子主件必须要有一个key 12345678910111213141516var Components = React.createClass(&#123; render:function()&#123; var subComponents = []; for(var i=0; i&lt;10; i++)&#123; subComponents.push( &lt;Component key=&#123;'subMsg'+i&#125;/&gt; ) &#125; return ( &lt;div&gt; &lt;h1&gt;你好世界！！！&lt;/h1&gt; &#123;subComponents&#125; &lt;/div&gt; ) &#125;&#125;); 组件嵌套state]]></content>
       <tags>
         <tag>js</tag>
         <tag>react</tag>

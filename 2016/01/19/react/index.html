@@ -81,15 +81,18 @@
 
 
 
+<meta name="description" content="React语法React.render12345React.render(     &amp;lt;Component/&amp;gt;, 	document.getElementById(&apos;app&apos;),    callback) React.createClass1234567var Component = React.createClass(&amp;#123;	render:function()&amp;#123;		re">
 <meta name="keywords" content="js,react">
 <meta property="og:type" content="article">
 <meta property="og:title" content="react基础">
 <meta property="og:url" content="https://matisha001.github.io/2016/01/19/react/index.html">
 <meta property="og:site_name" content="matisha001&#39;s notes">
+<meta property="og:description" content="React语法React.render12345React.render(     &amp;lt;Component/&amp;gt;, 	document.getElementById(&apos;app&apos;),    callback) React.createClass1234567var Component = React.createClass(&amp;#123;	render:function()&amp;#123;		re">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-10-06T08:53:20.865Z">
+<meta property="og:updated_time" content="2017-10-06T09:47:18.142Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="react基础">
+<meta name="twitter:description" content="React语法React.render12345React.render(     &amp;lt;Component/&amp;gt;, 	document.getElementById(&apos;app&apos;),    callback) React.createClass1234567var Component = React.createClass(&amp;#123;	render:function()&amp;#123;		re">
 
 
 
@@ -343,7 +346,15 @@
       
 
       
-        
+        <h2 id="React语法"><a href="#React语法" class="headerlink" title="React语法"></a>React语法</h2><h3 id="React-render"><a href="#React-render" class="headerlink" title="React.render"></a>React.render</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">React.render( </div><div class="line">    &lt;Component/&gt;, </div><div class="line">	<span class="built_in">document</span>.getElementById(<span class="string">'app'</span>),</div><div class="line">    callback</div><div class="line">)</div></pre></td></tr></table></figure>
+<h3 id="React-createClass"><a href="#React-createClass" class="headerlink" title="React.createClass"></a>React.createClass</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> Component = React.createClass(&#123;</div><div class="line">	render:<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">		<span class="keyword">return</span> (</div><div class="line">			&lt;div&gt;test&lt;<span class="regexp">/div&gt;</span></div><div class="line"><span class="regexp">		)</span></div><div class="line"><span class="regexp">	&#125;</span></div><div class="line"><span class="regexp">&#125;);</span></div></pre></td></tr></table></figure>
+ <a id="more"></a>
+<h2 id="React组件"><a href="#React组件" class="headerlink" title="React组件"></a>React组件</h2><h3 id="组件嵌套"><a href="#组件嵌套" class="headerlink" title="组件嵌套"></a>组件嵌套</h3><blockquote>
+<p>react组件的嵌套必须在外面用一个标签包裹起来</p>
+<p>父组件在传递一个数组的时候,子主件必须要有一个key</p>
+</blockquote>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> Components = React.createClass(&#123;</div><div class="line">	render:<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">		<span class="keyword">var</span> subComponents = [];</div><div class="line">		<span class="keyword">for</span>(<span class="keyword">var</span> i=<span class="number">0</span>; i&lt;<span class="number">10</span>; i++)&#123;</div><div class="line">			subComponents.push(</div><div class="line">				&lt;Component key=&#123;<span class="string">'subMsg'</span>+i&#125;/&gt;</div><div class="line">			)</div><div class="line">		&#125;</div><div class="line">		<span class="keyword">return</span> ( </div><div class="line">			&lt;div&gt;</div><div class="line">				&lt;h1&gt;你好世界！！！&lt;<span class="regexp">/h1&gt; </span></div><div class="line"><span class="regexp">				&#123;subComponents&#125;</span></div><div class="line"><span class="regexp">			&lt;/</span>div&gt;</div><div class="line">		)</div><div class="line">	&#125;</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
+<h3 id="组件嵌套state"><a href="#组件嵌套state" class="headerlink" title="组件嵌套state"></a>组件嵌套state</h3>
       
     </div>
     
@@ -437,8 +448,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -516,6 +536,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#React语法"><span class="nav-number">1.</span> <span class="nav-text">React语法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#React-render"><span class="nav-number">1.1.</span> <span class="nav-text">React.render</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#React-createClass"><span class="nav-number">1.2.</span> <span class="nav-text">React.createClass</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#React组件"><span class="nav-number">2.</span> <span class="nav-text">React组件</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#组件嵌套"><span class="nav-number">2.1.</span> <span class="nav-text">组件嵌套</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#组件嵌套state"><span class="nav-number">2.2.</span> <span class="nav-text">组件嵌套state</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
