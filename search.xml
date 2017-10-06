@@ -1,29 +1,128 @@
 <?xml version="1.0" encoding="utf-8"?>
-<search>
-  <entry>
-    <title><![CDATA[vue基础]]></title>
-    <url>%2F2016%2F08%2F19%2Fvue%2F</url>
-    <content type="text"></content>
-      <tags>
-        <tag>js</tag>
-        <tag>vue</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[react基础]]></title>
-    <url>%2F2016%2F01%2F19%2Freact%2F</url>
-    <content type="text"><![CDATA[React语法React.render123456var test = React.render( &lt;Component/&gt;, document.getElementById('app'), callback)console.log(test) React.render返回的是一个在当前作用域上的一个对象 React.createClass12345678910111213141516var Component = React.createClass(&#123; getInitialState:function()&#123; //state初始状态 &#125;, propTypes:&#123; //验证props格式是否正确 &#125;, getDefaultProps:function()&#123; //props初始参数 &#125;, render:function()&#123; return ( &lt;div&gt;test&lt;/div&gt; ) &#125;&#125;); React组件组件嵌套 react组件的嵌套必须在外面用一个标签包裹起来 父组件在传递一个数组的时候,子主件必须要有一个key 12345678910111213141516var Components = React.createClass(&#123; render:function()&#123; var subComponents = []; for(var i=0; i&lt;10; i++)&#123; subComponents.push( &lt;Component key=&#123;'subMsg'+i&#125;/&gt; ) &#125; return ( &lt;div&gt; &lt;h1&gt;你好世界！！！&lt;/h1&gt; &#123;subComponents&#125; &lt;/div&gt; ) &#125;&#125;); 组件状态state1234567891011121314151617var Component = React.createClass(&#123; getInitialState:function()&#123; //获取初始状态 &#125;, handleClick: function()&#123; this.setState(&#123; Count: 1, &#125;) &#125;, render:function()&#123; return ( &lt;div onClick=&#123;this.handleClick&#125;&gt; test &lt;/div&gt; ) &#125;&#125;); 不要使用this.state来改变state的状态，要用this.setState({})来改变state的状态.调用setState,react将重新render一下。 如果非要使用this.state来改变state的状态，需要调用forceUpdate() 组件通信props1234567891011121314151617181920212223242526272829303132var Component = React.createClass(&#123; render:function()&#123; return ( &lt;div&gt; &lt;Submessage messages=&#123;this.state.subMessages&#125; /&gt; &lt;/div&gt; ) &#125;&#125;);```jsvar Submessage = React.createClass(&#123; propTypes:&#123; //验证props格式是否正确 messages: React.PropTypes.array.isRequired, &#125;, getDefaultProps:function()&#123; //props初始参数 &#125;, render:function()&#123; var msgs = []; this.props.messages.forEach(function(msg,index)&#123; msgs.push( &lt;p&gt;&#123;msg&#125;&lt;/p&gt; ) &#125;); return ( &lt;div&gt;&#123;msgs&#125;&lt;/div&gt; ) &#125;&#125;); PropTypes种类有 bool、array、func、number、object、string等]]></content>
-      <tags>
-        <tag>js</tag>
-        <tag>react</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[webpack的使用]]></title>
-    <url>%2F2015%2F03%2F19%2Fwebpack%2F</url>
-    <content type="text"><![CDATA[安装webpack12npm i webpack --gwebpack --help 使用webpack创建项目123npm init npm i webpackwebpack enter.js bundle.js 打包生成的bundle.js包含webpack本身需要的一些东西。 模块依赖123//main.jsvar test=require('./test');console.log(test) 12//test.jsmodule.exports="matisha001" loader转换器 loader转换器是将资源从一种形式转化为另一种形式，最总转化为js。 123//常见的转换器css-loader、style-loader等require('style!css!./style.css'); 配置文件默认的配置文件为webpack.config.js1输入 webpack 123456789101112131415//webpack.config.jsmodule.exports = &#123; entry:'./main.js',//入口文件 output:&#123;//生成文件 path:__dirname, filename:'bundle.js' &#125;, devtool:'source-map',//生成source-map文件 module:&#123; //要使用的模块 loaders:[ &#123;test:/\.js$/,loader:'babel'&#125;, &#123;test:/\.css$/,loader:'style!css'&#125; ] &#125;&#125;; 调试代码 source-map生成source-map文件1webpack --devtool source-map 123//test.jsdebugger; //代码打断点module.exports="matisha001" babel转换12//安装babel依赖npm i babel-loader babel-core babel-preset-es2015 --save-dev 1234//创建.babelrc配置文件&#123; "presets":["es2015"] //设置babel预设&#125; 123//main.jsimport name from './name';export default name; webpack插件webpack-dev-server提供开发服务器、页面刷新、模块热替换(只替换有变化的内容，不需要刷新整个页面)。 123npm i webpack-dev-server --gnpm i webpack-dev-server --save-devwebpack-dev-server --inline --hot 创建react项目123//安装依赖npm i babel-core babel-preset-es2015 babel-preset-react webpack webpack-dev-server babel-loader react-hot-loader --save-devnpm i react react-dom --save 1234567891011121314151617181920//webpack.config.jsmodule.exports = &#123; entry:'./main.js',//入口文件 output:&#123;//生成文件 path:__dirname, filename:'bundle.js' &#125;, devtool:'source-map',//生成source-map文件 module:&#123; //要使用的模块 loaders:[ &#123; test:[/\.js$/,/\.jsx?$/], exclude:/(node_modules)/, loader:'react-hot!babel' &#125;, &#123;test:/\.css$/,loader:'style!css'&#125; ] &#125;&#125;; 1234//创建.babelrc配置文件&#123; "presets":["es2015","react"] //设置babel预设&#125;]]></content>
-      <tags>
-        <tag>js</tag>
-      </tags>
-  </entry>
+<search> 
+  
+    
+    <entry>
+      <title><![CDATA[vue基础]]></title>
+      <url>/2016/08/19/vue/</url>
+      <content type="html"></content>
+      
+        
+        <tags>
+            
+            <tag> js </tag>
+            
+            <tag> vue </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
+      <title><![CDATA[react基础]]></title>
+      <url>/2016/01/19/react/</url>
+      <content type="html"><![CDATA[<h2 id="React语法"><a href="#React语法" class="headerlink" title="React语法"></a>React语法</h2><h3 id="React-render"><a href="#React-render" class="headerlink" title="React.render"></a>React.render</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> test = React.render( </div><div class="line">    &lt;Component/&gt;, </div><div class="line">	<span class="built_in">document</span>.getElementById(<span class="string">'app'</span>),</div><div class="line">    callback</div><div class="line">)</div><div class="line"><span class="built_in">console</span>.log(test)</div></pre></td></tr></table></figure>
+<blockquote>
+<p>React.render返回的是一个在当前作用域上的一个对象 </p>
+</blockquote>
+<h3 id="React-createClass"><a href="#React-createClass" class="headerlink" title="React.createClass"></a>React.createClass</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> Component = React.createClass(&#123;</div><div class="line">    getInitialState:<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">        <span class="comment">//state初始状态</span></div><div class="line">    &#125;,</div><div class="line">    </div><div class="line">    propTypes:&#123;</div><div class="line">        <span class="comment">//验证props格式是否正确</span></div><div class="line">    &#125;,</div><div class="line">    </div><div class="line">    getDefaultProps:<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">        <span class="comment">//props初始参数</span></div><div class="line">	&#125;,</div><div class="line">	</div><div class="line">	render:<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">		<span class="keyword">return</span> (</div><div class="line">			&lt;div&gt;test&lt;<span class="regexp">/div&gt;</span></div><div class="line"><span class="regexp">		)</span></div><div class="line"><span class="regexp">	&#125;</span></div><div class="line"><span class="regexp">&#125;);</span></div></pre></td></tr></table></figure>
+ <a id="more"></a>
+<h2 id="React组件"><a href="#React组件" class="headerlink" title="React组件"></a>React组件</h2><h3 id="组件嵌套"><a href="#组件嵌套" class="headerlink" title="组件嵌套"></a>组件嵌套</h3><blockquote>
+<p>react组件的嵌套必须在外面用一个标签包裹起来</p>
+<p>父组件在传递一个数组的时候,子主件必须要有一个key</p>
+</blockquote>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> Components = React.createClass(&#123;</div><div class="line">	render:<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">		<span class="keyword">var</span> subComponents = [];</div><div class="line">		<span class="keyword">for</span>(<span class="keyword">var</span> i=<span class="number">0</span>; i&lt;<span class="number">10</span>; i++)&#123;</div><div class="line">			subComponents.push(</div><div class="line">				&lt;Component key=&#123;<span class="string">'subMsg'</span>+i&#125;/&gt;</div><div class="line">			)</div><div class="line">		&#125;</div><div class="line">		<span class="keyword">return</span> ( </div><div class="line">			&lt;div&gt;</div><div class="line">				&lt;h1&gt;你好世界！！！&lt;<span class="regexp">/h1&gt; </span></div><div class="line"><span class="regexp">				&#123;subComponents&#125;</span></div><div class="line"><span class="regexp">			&lt;/</span>div&gt;</div><div class="line">		)</div><div class="line">	&#125;</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
+<h3 id="组件状态state"><a href="#组件状态state" class="headerlink" title="组件状态state"></a>组件状态state</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> Component = React.createClass(&#123;</div><div class="line">    getInitialState:<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">        <span class="comment">//获取初始状态</span></div><div class="line">    &#125;,</div><div class="line">	handleClick: <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">		<span class="keyword">this</span>.setState(&#123;</div><div class="line">			Count: <span class="number">1</span>,</div><div class="line">		&#125;)</div><div class="line">	&#125;,</div><div class="line">	render:<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">		<span class="keyword">return</span> (</div><div class="line">			&lt;div onClick=&#123;<span class="keyword">this</span>.handleClick&#125;&gt;</div><div class="line">			   test</div><div class="line">			&lt;<span class="regexp">/div&gt;</span></div><div class="line"><span class="regexp">		)</span></div><div class="line"><span class="regexp">	&#125;</span></div><div class="line"><span class="regexp">&#125;);</span></div></pre></td></tr></table></figure>
+<blockquote>
+<p>不要使用this.state来改变state的状态，要用this.setState({})来改变state的状态.调用setState,react将重新render一下。</p>
+<p>如果非要使用this.state来改变state的状态，需要调用forceUpdate()</p>
+</blockquote>
+<h3 id="组件通信props"><a href="#组件通信props" class="headerlink" title="组件通信props"></a>组件通信props</h3><figure class="highlight jsx"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> Component = React.createClass(&#123;</div><div class="line">	render:<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">		<span class="keyword">return</span> (</div><div class="line">			&lt;div&gt;</div><div class="line">			   &lt;Submessage messages=&#123;<span class="keyword">this</span>.state.subMessages&#125; /&gt;</div><div class="line">			&lt;<span class="regexp">/div&gt;</span></div><div class="line"><span class="regexp">		)</span></div><div class="line"><span class="regexp">	&#125;</span></div><div class="line"><span class="regexp">&#125;);</span></div></pre></td></tr></table></figure>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> Submessage = React.createClass(&#123;</div><div class="line">    propTypes:&#123;</div><div class="line">        <span class="comment">//验证props格式是否正确</span></div><div class="line">        messages: React.PropTypes.array.isRequired,</div><div class="line">    &#125;,</div><div class="line">    getDefaultProps:<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">        <span class="comment">//props初始参数</span></div><div class="line">	&#125;,</div><div class="line">	render:<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">		<span class="keyword">var</span> msgs = [];</div><div class="line">		<span class="keyword">this</span>.props.messages.forEach(<span class="function"><span class="keyword">function</span>(<span class="params">msg,index</span>)</span>&#123;</div><div class="line">			msgs.push(</div><div class="line">				&lt;p&gt;&#123;msg&#125;&lt;<span class="regexp">/p&gt;</span></div><div class="line"><span class="regexp">			)</span></div><div class="line"><span class="regexp">		&#125;);</span></div><div class="line"><span class="regexp"></span></div><div class="line"><span class="regexp">		return (</span></div><div class="line"><span class="regexp">			&lt;div&gt;&#123;msgs&#125;&lt;/</span>div&gt;</div><div class="line">		)</div><div class="line">	&#125;</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
+<blockquote>
+<p>PropTypes种类有 bool、array、func、number、object、string等</p>
+</blockquote>
+<h2 id="React事件"><a href="#React事件" class="headerlink" title="React事件"></a>React事件</h2><ol>
+<li>onCopy onCut onPaste</li>
+<li>onCompositionEnd onCompositionStart onCompositionUpdate</li>
+<li>onKeyDown onKeyPress onKeyUp</li>
+<li>onFocus onBlur</li>
+<li>onChange onInput onInvalid onSubmit</li>
+<li>onClick onContextMenu onDoubleClick onDrag onDragEnd onDragEnter onDragExit<br>onDragLeave onDragOver onDragStart onDrop onMouseDown onMouseEnter onMouseLeave<br>onMouseMove onMouseOut onMouseOver onMouseUp</li>
+<li>onSelect</li>
+<li>onTouchCancel onTouchEnd onTouchMove onTouchStart</li>
+<li>onScroll</li>
+<li>onWheel</li>
+<li>onAbort onCanPlay onCanPlayThrough onDurationChange onEmptied onEncrypted<br>onEnded onError onLoadedData onLoadedMetadata onLoadStart onPause onPlay<br>onPlaying onProgress onRateChange onSeeked onSeeking onStalled onSuspend<br>onTimeUpdate onVolumeChange onWaiting</li>
+<li>onLoad onError</li>
+<li>onAnimationStart onAnimationEnd onAnimationIteration</li>
+<li>onTransitionEnd</li>
+<li>onToggle</li>
+</ol>
+<pre><code class="js"><span class="keyword">var</span> Component = React.createClass({
+    handleClick: <span class="function"><span class="keyword">function</span>(<span class="params">e</span>)</span>{
+        e.preventDefault();
+        <span class="keyword">this</span>.setState({
+            Count: <span class="number">1</span>,
+        });
+        <span class="built_in">console</span>.log(e.nativeEvent);<span class="comment">//浏览器自带的event</span>
+        <span class="built_in">console</span>.log(e.target);<span class="comment">//封装的event</span>
+    },
+    render:<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>{
+        <span class="keyword">return</span> (
+            &lt;div onClick={<span class="keyword">this</span>.handleClick}&gt;
+               test
+            &lt;<span class="regexp">/div&gt;</span>
+<span class="regexp">        )</span>
+<span class="regexp">    }</span>
+<span class="regexp">});</span>
+</code></pre>
+]]></content>
+      
+        
+        <tags>
+            
+            <tag> js </tag>
+            
+            <tag> react </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
+      <title><![CDATA[webpack的使用]]></title>
+      <url>/2015/03/19/webpack/</url>
+      <content type="html"><![CDATA[<h2 id="安装webpack"><a href="#安装webpack" class="headerlink" title="安装webpack"></a>安装webpack</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">npm i webpack --g</div><div class="line">webpack --help</div></pre></td></tr></table></figure>
+<h2 id="使用webpack创建项目"><a href="#使用webpack创建项目" class="headerlink" title="使用webpack创建项目"></a>使用webpack创建项目</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">npm init </div><div class="line">npm i webpack</div><div class="line">webpack enter.js  bundle.js</div></pre></td></tr></table></figure>
+<p> 打包生成的bundle.js包含webpack本身需要的一些东西。</p>
+ <a id="more"></a>
+<h3 id="模块依赖"><a href="#模块依赖" class="headerlink" title="模块依赖"></a>模块依赖</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//main.js</span></div><div class="line"><span class="keyword">var</span> test=<span class="built_in">require</span>(<span class="string">'./test'</span>);</div><div class="line"><span class="built_in">console</span>.log(test)</div></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//test.js</span></div><div class="line"><span class="built_in">module</span>.exports=<span class="string">"matisha001"</span></div></pre></td></tr></table></figure>
+<h3 id="loader转换器"><a href="#loader转换器" class="headerlink" title="loader转换器"></a>loader转换器</h3><p> loader转换器是将资源从一种形式转化为另一种形式，最总转化为js。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//常见的转换器</span></div><div class="line">css-loader、style-loader等</div><div class="line"><span class="built_in">require</span>(<span class="string">'style!css!./style.css'</span>);</div></pre></td></tr></table></figure>
+<h3 id="配置文件"><a href="#配置文件" class="headerlink" title="配置文件"></a>配置文件</h3><p>默认的配置文件为webpack.config.js<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">输入 webpack</div></pre></td></tr></table></figure></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//webpack.config.js</span></div><div class="line"><span class="built_in">module</span>.exports = &#123;</div><div class="line">  entry:<span class="string">'./main.js'</span>,<span class="comment">//入口文件</span></div><div class="line">  output:&#123;<span class="comment">//生成文件</span></div><div class="line">    path:__dirname,</div><div class="line">    filename:<span class="string">'bundle.js'</span></div><div class="line">  &#125;,</div><div class="line">  devtool:<span class="string">'source-map'</span>,<span class="comment">//生成source-map文件</span></div><div class="line">  <span class="built_in">module</span>:&#123; <span class="comment">//要使用的模块</span></div><div class="line">    loaders:[</div><div class="line">      &#123;<span class="attr">test</span>:<span class="regexp">/\.js$/</span>,<span class="attr">loader</span>:<span class="string">'babel'</span>&#125;,</div><div class="line">      &#123;<span class="attr">test</span>:<span class="regexp">/\.css$/</span>,<span class="attr">loader</span>:<span class="string">'style!css'</span>&#125;</div><div class="line">    ]</div><div class="line">  &#125;</div><div class="line">&#125;;</div></pre></td></tr></table></figure>
+<h3 id="调试代码-source-map"><a href="#调试代码-source-map" class="headerlink" title="调试代码 source-map"></a>调试代码 source-map</h3><p>生成source-map文件<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">webpack --devtool source-map</div></pre></td></tr></table></figure></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//test.js</span></div><div class="line"><span class="keyword">debugger</span>;  <span class="comment">//代码打断点</span></div><div class="line"><span class="built_in">module</span>.exports=<span class="string">"matisha001"</span></div></pre></td></tr></table></figure>
+<h3 id="babel转换"><a href="#babel转换" class="headerlink" title="babel转换"></a>babel转换</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//安装babel依赖</span></div><div class="line">npm i babel-loader  babel-core babel-preset-es2015 --save-dev</div></pre></td></tr></table></figure>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">//创建.babelrc配置文件</div><div class="line">&#123;</div><div class="line">  <span class="attr">"presets"</span>:[<span class="string">"es2015"</span>] //设置babel预设</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//main.js</span></div><div class="line"><span class="keyword">import</span> name <span class="keyword">from</span> <span class="string">'./name'</span>;</div><div class="line"><span class="keyword">export</span> <span class="keyword">default</span> name;</div></pre></td></tr></table></figure>
+<h2 id="webpack插件"><a href="#webpack插件" class="headerlink" title="webpack插件"></a>webpack插件</h2><h3 id="webpack-dev-server"><a href="#webpack-dev-server" class="headerlink" title="webpack-dev-server"></a>webpack-dev-server</h3><p>提供开发服务器、页面刷新、模块热替换(只替换有变化的内容，不需要刷新整个页面)。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">npm i webpack-dev-server --g</div><div class="line">npm i webpack-dev-server --save-dev</div><div class="line">webpack-dev-server --inline --hot</div></pre></td></tr></table></figure>
+<h2 id="创建react项目"><a href="#创建react项目" class="headerlink" title="创建react项目"></a>创建react项目</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//安装依赖</span></div><div class="line">npm i babel-core babel-preset-es2015 babel-preset-react webpack webpack-dev-server babel-loader react-hot-loader --save-dev</div><div class="line">npm i react react-dom --save</div></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//webpack.config.js</span></div><div class="line"><span class="built_in">module</span>.exports = &#123;</div><div class="line">  entry:<span class="string">'./main.js'</span>,<span class="comment">//入口文件</span></div><div class="line">  output:&#123;<span class="comment">//生成文件</span></div><div class="line">    path:__dirname,</div><div class="line">    filename:<span class="string">'bundle.js'</span></div><div class="line">  &#125;,</div><div class="line">  devtool:<span class="string">'source-map'</span>,<span class="comment">//生成source-map文件</span></div><div class="line">  <span class="built_in">module</span>:&#123; <span class="comment">//要使用的模块</span></div><div class="line">    loaders:[</div><div class="line">      &#123;</div><div class="line">            test:[<span class="regexp">/\.js$/</span>,/\.jsx?$/],</div><div class="line">            exclude:<span class="regexp">/(node_modules)/</span>,</div><div class="line">            loader:<span class="string">'react-hot!babel'</span></div><div class="line">    </div><div class="line">        &#125;,</div><div class="line">      &#123;<span class="attr">test</span>:<span class="regexp">/\.css$/</span>,<span class="attr">loader</span>:<span class="string">'style!css'</span>&#125;</div><div class="line">    ]</div><div class="line">  &#125;</div><div class="line">&#125;;</div></pre></td></tr></table></figure>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">//创建.babelrc配置文件</div><div class="line">&#123;</div><div class="line">  <span class="attr">"presets"</span>:[<span class="string">"es2015"</span>,<span class="string">"react"</span>] //设置babel预设</div><div class="line">&#125;</div></pre></td></tr></table></figure>]]></content>
+      
+        
+        <tags>
+            
+            <tag> js </tag>
+            
+        </tags>
+        
+    </entry>
+    
+  
+  
 </search>
