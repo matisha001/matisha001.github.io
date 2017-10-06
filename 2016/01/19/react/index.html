@@ -89,7 +89,7 @@
 <meta property="og:site_name" content="matisha001&#39;s notes">
 <meta property="og:description" content="React语法React.render123456var test = React.render(     &amp;lt;Component/&amp;gt;, 	document.getElementById(&apos;app&apos;),    callback)console.log(test)  React.render返回的是一个在当前作用域上的一个对象   React.createClass123456789101">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-10-06T16:05:51.435Z">
+<meta property="og:updated_time" content="2017-10-06T17:35:48.621Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="react基础">
 <meta name="twitter:description" content="React语法React.render123456var test = React.render(     &amp;lt;Component/&amp;gt;, 	document.getElementById(&apos;app&apos;),    callback)console.log(test)  React.render返回的是一个在当前作用域上的一个对象   React.createClass123456789101">
@@ -362,29 +362,17 @@
 <p>不要使用this.state来改变state的状态，要用this.setState({})来改变state的状态.调用setState,react将重新render一下。</p>
 <p>如果非要使用this.state来改变state的状态，需要调用forceUpdate()</p>
 </blockquote>
-<h3 id="组件通信props"><a href="#组件通信props" class="headerlink" title="组件通信props"></a>组件通信props</h3><figure class="highlight jsx"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> Component = React.createClass(&#123;</div><div class="line">	render:<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">		<span class="keyword">return</span> (</div><div class="line">			&lt;div&gt;</div><div class="line">			   &lt;Submessage messages=&#123;<span class="keyword">this</span>.state.subMessages&#125; /&gt;</div><div class="line">			&lt;<span class="regexp">/div&gt;</span></div><div class="line"><span class="regexp">		)</span></div><div class="line"><span class="regexp">	&#125;</span></div><div class="line"><span class="regexp">&#125;);</span></div></pre></td></tr></table></figure>
+<h3 id="组件通信props"><a href="#组件通信props" class="headerlink" title="组件通信props"></a>组件通信props</h3><figure class="highlight jsx"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> Component = React.createClass(&#123;</div><div class="line">	render:<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">		<span class="keyword">return</span> (</div><div class="line">			&lt;div&gt;</div><div class="line">			   &lt;Submessage &#123;...this.props &#125;  messages=&#123;<span class="keyword">this</span>.state.subMessages&#125; /&gt;</div><div class="line">			&lt;<span class="regexp">/div&gt;</span></div><div class="line"><span class="regexp">		)</span></div><div class="line"><span class="regexp">	&#125;</span></div><div class="line"><span class="regexp">&#125;);</span></div></pre></td></tr></table></figure>
 <figure class="highlight jsx"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> Submessage = React.createClass(&#123;</div><div class="line">    propTypes:&#123;</div><div class="line">        <span class="comment">//验证props格式是否正确</span></div><div class="line">        messages: React.PropTypes.array.isRequired,</div><div class="line">    &#125;,</div><div class="line">    getDefaultProps:<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">        <span class="comment">//props初始参数</span></div><div class="line">	&#125;,</div><div class="line">	render:<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">		<span class="keyword">var</span> msgs = [];</div><div class="line">		<span class="keyword">this</span>.props.messages.forEach(<span class="function"><span class="keyword">function</span>(<span class="params">msg,index</span>)</span>&#123;</div><div class="line">			msgs.push(</div><div class="line">				&lt;p&gt;&#123;msg&#125;&lt;<span class="regexp">/p&gt;</span></div><div class="line"><span class="regexp">			)</span></div><div class="line"><span class="regexp">		&#125;);</span></div><div class="line"><span class="regexp"></span></div><div class="line"><span class="regexp">		return (</span></div><div class="line"><span class="regexp">			&lt;div&gt;&#123;msgs&#125;&lt;/</span>div&gt;</div><div class="line">		)</div><div class="line">	&#125;</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
 <blockquote>
 <p>PropTypes种类有 bool、array、func、number、object、string等</p>
 </blockquote>
-<h2 id="React事件"><a href="#React事件" class="headerlink" title="React事件"></a>React事件</h2><ol>
-<li>onCopy onCut onPaste</li>
-<li>onCompositionEnd onCompositionStart onCompositionUpdate</li>
-<li>onKeyDown onKeyPress onKeyUp</li>
-<li>onFocus onBlur</li>
-<li>onChange onInput onInvalid onSubmit</li>
-<li>onClick onContextMenu onDoubleClick onDrag onDragEnd onDragEnter onDragExit<br>onDragLeave onDragOver onDragStart onDrop onMouseDown onMouseEnter onMouseLeave<br>onMouseMove onMouseOut onMouseOver onMouseUp</li>
-<li>onSelect</li>
-<li>onTouchCancel onTouchEnd onTouchMove onTouchStart</li>
-<li>onScroll</li>
-<li>onWheel</li>
-<li>onAbort onCanPlay onCanPlayThrough onDurationChange onEmptied onEncrypted<br>onEnded onError onLoadedData onLoadedMetadata onLoadStart onPause onPlay<br>onPlaying onProgress onRateChange onSeeked onSeeking onStalled onSuspend<br>onTimeUpdate onVolumeChange onWaiting</li>
-<li>onLoad onError</li>
-<li>onAnimationStart onAnimationEnd onAnimationIteration</li>
-<li>onTransitionEnd</li>
-<li>onToggle</li>
-</ol>
-<pre><code class="js"><span class="keyword">var</span> Component = React.createClass({
+<h3 id="组件指向ref"><a href="#组件指向ref" class="headerlink" title="组件指向ref"></a>组件指向ref</h3><figure class="highlight jsx"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> Component = React.createClass(&#123;</div><div class="line">	handleClick: <span class="function"><span class="keyword">function</span>(<span class="params">e</span>)</span>&#123;</div><div class="line">	    e.preventDefault();</div><div class="line">	    <span class="comment">//获取原生dom对象</span></div><div class="line">        <span class="built_in">console</span>.log(<span class="keyword">this</span>.refs.mytest.getDOMNode());</div><div class="line">        <span class="built_in">console</span>.log(React.findDOMNode(<span class="keyword">this</span>.refs.mytest));</div><div class="line">        <span class="keyword">this</span>.refs.mytest.saySomething();</div><div class="line">	&#125;,</div><div class="line">	render:<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">		<span class="keyword">return</span> (</div><div class="line">			&lt;div&gt;</div><div class="line">			   &lt;Submessage ref=<span class="string">"mytest"</span> messages=&#123;<span class="keyword">this</span>.state.subMessages&#125; /&gt;</div><div class="line">			   &lt;input ref=&#123;</div><div class="line">    			   <span class="function"><span class="keyword">function</span>(<span class="params">comp</span>)</span>&#123;</div><div class="line">                 React.findDOMNode(comp).focus()</div><div class="line">    			   &#125;</div><div class="line">			       </div><div class="line">			   &#125;</div><div class="line">			   /&gt;test</div><div class="line">			&lt;<span class="regexp">/div&gt;</span></div><div class="line"><span class="regexp">		)</span></div><div class="line"><span class="regexp">	&#125;</span></div><div class="line"><span class="regexp">&#125;);</span></div><div class="line"><span class="regexp">``` </span></div><div class="line"><span class="regexp"></span></div><div class="line"><span class="regexp">```jsx</span></div><div class="line"><span class="regexp">var Submessage = React.createClass(&#123;</span></div><div class="line"><span class="regexp">    saySomething：function()&#123;</span></div><div class="line"><span class="regexp">        alert("111")</span></div><div class="line"><span class="regexp">    &#125;,</span></div><div class="line"><span class="regexp">	render:function()&#123;</span></div><div class="line"><span class="regexp">		return (</span></div><div class="line"><span class="regexp">			&lt;div onChange=&#123;this.props.handleClick&#125;&gt;&#123;msgs&#125;&lt;/</span>div&gt;</div><div class="line">		)</div><div class="line">	&#125;</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
+<blockquote>
+<p>ref指的是react对象,在子组件中定义其他方法,ref也可以实现调用。</p>
+<p>ref是字符串,实际上也可以是函数</p>
+</blockquote>
+<h2 id="React事件"><a href="#React事件" class="headerlink" title="React事件"></a>React事件</h2><pre><code class="jsx"><span class="keyword">var</span> Component = React.createClass({
     handleClick: <span class="function"><span class="keyword">function</span>(<span class="params">e</span>)</span>{
         e.preventDefault();
         <span class="keyword">this</span>.setState({
@@ -397,6 +385,23 @@
         <span class="keyword">return</span> (
             &lt;div onClick={<span class="keyword">this</span>.handleClick}&gt;
                test
+            &lt;<span class="regexp">/div&gt;</span>
+<span class="regexp">        )</span>
+<span class="regexp">    }</span>
+<span class="regexp">});</span>
+</code></pre>
+<h2 id="React双向数据流"><a href="#React双向数据流" class="headerlink" title="React双向数据流"></a>React双向数据流</h2><blockquote>
+<p>react 采用的是单向数据流。</p>
+<p>react-with-addons.js</p>
+<p>实现react双向数据流,需要mixins</p>
+</blockquote>
+<pre><code class="jsx"><span class="keyword">var</span> Component = React.createClass({
+    mixins: [ React.addons.LinkedStateMixin ],
+    render:<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>{
+        <span class="keyword">return</span> (
+            &lt;div&gt;
+               &lt;h1&gt;{<span class="keyword">this</span>.state.message}&lt;<span class="regexp">/h1&gt;</span>
+<span class="regexp">               &lt;input type="text" valueLink={this.linkState('message')} /</span>&gt;
             &lt;<span class="regexp">/div&gt;</span>
 <span class="regexp">        )</span>
 <span class="regexp">    }</span>
@@ -594,7 +599,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#React语法"><span class="nav-number">1.</span> <span class="nav-text">React语法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#React-render"><span class="nav-number">1.1.</span> <span class="nav-text">React.render</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#React-createClass"><span class="nav-number">1.2.</span> <span class="nav-text">React.createClass</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#React组件"><span class="nav-number">2.</span> <span class="nav-text">React组件</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#组件嵌套"><span class="nav-number">2.1.</span> <span class="nav-text">组件嵌套</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#组件状态state"><span class="nav-number">2.2.</span> <span class="nav-text">组件状态state</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#组件通信props"><span class="nav-number">2.3.</span> <span class="nav-text">组件通信props</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#React事件"><span class="nav-number">3.</span> <span class="nav-text">React事件</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#React语法"><span class="nav-number">1.</span> <span class="nav-text">React语法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#React-render"><span class="nav-number">1.1.</span> <span class="nav-text">React.render</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#React-createClass"><span class="nav-number">1.2.</span> <span class="nav-text">React.createClass</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#React组件"><span class="nav-number">2.</span> <span class="nav-text">React组件</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#组件嵌套"><span class="nav-number">2.1.</span> <span class="nav-text">组件嵌套</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#组件状态state"><span class="nav-number">2.2.</span> <span class="nav-text">组件状态state</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#组件通信props"><span class="nav-number">2.3.</span> <span class="nav-text">组件通信props</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#组件指向ref"><span class="nav-number">2.4.</span> <span class="nav-text">组件指向ref</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#React事件"><span class="nav-number">3.</span> <span class="nav-text">React事件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#React双向数据流"><span class="nav-number">4.</span> <span class="nav-text">React双向数据流</span></a></li></ol></div>
             
 
           </div>
