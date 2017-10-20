@@ -81,18 +81,18 @@
 
 
 
-<meta name="description" content="React语法React.render123456var test = React.render(   &amp;lt;Component/&amp;gt;,   document.getElementById(&apos;app&apos;),  callback)console.log(test)  React.render返回的是一个在当前作用域上的一个对象   React.createClass123456789101112">
+<meta name="description" content="React语法React.render123456var test = React.render(   &amp;lt;Component/&amp;gt;,   document.getElementById(&apos;app&apos;),  callback)console.log(test)  React.render返回的是一个在当前作用域上的一个对象">
 <meta name="keywords" content="js,react">
 <meta property="og:type" content="article">
-<meta property="og:title" content="react基础">
+<meta property="og:title" content="react的基础">
 <meta property="og:url" content="https://matisha001.github.io/2016/01/19/react/index.html">
 <meta property="og:site_name" content="matisha001&#39;s notes">
-<meta property="og:description" content="React语法React.render123456var test = React.render(   &amp;lt;Component/&amp;gt;,   document.getElementById(&apos;app&apos;),  callback)console.log(test)  React.render返回的是一个在当前作用域上的一个对象   React.createClass123456789101112">
+<meta property="og:description" content="React语法React.render123456var test = React.render(   &amp;lt;Component/&amp;gt;,   document.getElementById(&apos;app&apos;),  callback)console.log(test)  React.render返回的是一个在当前作用域上的一个对象">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-10-06T20:07:24.373Z">
+<meta property="og:updated_time" content="2017-10-09T21:02:54.451Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="react基础">
-<meta name="twitter:description" content="React语法React.render123456var test = React.render(   &amp;lt;Component/&amp;gt;,   document.getElementById(&apos;app&apos;),  callback)console.log(test)  React.render返回的是一个在当前作用域上的一个对象   React.createClass123456789101112">
+<meta name="twitter:title" content="react的基础">
+<meta name="twitter:description" content="React语法React.render123456var test = React.render(   &amp;lt;Component/&amp;gt;,   document.getElementById(&apos;app&apos;),  callback)console.log(test)  React.render返回的是一个在当前作用域上的一个对象">
 
 
 
@@ -128,7 +128,7 @@
 
 
 
-  <title>react基础 | matisha001's notes</title>
+  <title>react的基础 | matisha001's notes</title>
   
 
 
@@ -296,7 +296,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">react基础</h1>
+          <h1 class="post-title" itemprop="name headline">react的基础</h1>
         
 
         <div class="post-meta">
@@ -349,9 +349,9 @@
         <h2 id="React语法"><a href="#React语法" class="headerlink" title="React语法"></a>React语法</h2><h3 id="React-render"><a href="#React-render" class="headerlink" title="React.render"></a>React.render</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> test = React.render( </div><div class="line">  &lt;Component/&gt;, </div><div class="line">  <span class="built_in">document</span>.getElementById(<span class="string">'app'</span>),</div><div class="line">  callback</div><div class="line">)</div><div class="line"><span class="built_in">console</span>.log(test)</div></pre></td></tr></table></figure>
 <blockquote>
 <p>React.render返回的是一个在当前作用域上的一个对象 </p>
+<a id="more"></a>
 </blockquote>
 <h3 id="React-createClass"><a href="#React-createClass" class="headerlink" title="React.createClass"></a>React.createClass</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> Component = React.createClass(&#123;</div><div class="line">  getInitialState:<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    <span class="comment">//state初始状态</span></div><div class="line">  &#125;,</div><div class="line">  propTypes:&#123;</div><div class="line">    <span class="comment">//验证props格式是否正确</span></div><div class="line">  &#125;,</div><div class="line">  getDefaultProps:<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    <span class="comment">//props初始参数</span></div><div class="line">  &#125;,</div><div class="line">  componentWillMount:<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    <span class="comment">//组件将要被装载</span></div><div class="line">  &#125;,</div><div class="line">  componentDidMount:<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    <span class="comment">//组件已经被装载</span></div><div class="line">  &#125;,</div><div class="line">  componentWillUnmount: <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    <span class="comment">//组件将要被卸载</span></div><div class="line">    React.unmountComponentAtNode(  <span class="built_in">document</span>.getElementById(<span class="string">'app'</span>) );<span class="comment">//删除react节点</span></div><div class="line">  &#125;,</div><div class="line">  render:<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    <span class="keyword">return</span> (</div><div class="line">      &lt;div&gt;test&lt;<span class="regexp">/div&gt;</span></div><div class="line"><span class="regexp">    )</span></div><div class="line"><span class="regexp">  &#125;</span></div><div class="line"><span class="regexp">&#125;);</span></div></pre></td></tr></table></figure>
- <a id="more"></a>
 <h2 id="React生命周期"><a href="#React生命周期" class="headerlink" title="React生命周期"></a>React生命周期</h2><blockquote>
 <p>react生命周期分三个阶段装载、更新、卸载 </p>
 </blockquote>
@@ -406,7 +406,10 @@
 <p>不要使用this.state来改变state的状态，要用this.setState({})来改变state的状态.调用setState,react将重新render一下。</p>
 <p>如果非要使用this.state来改变state的状态，需要调用forceUpdate()</p>
 </blockquote>
-<h3 id="组件通信props"><a href="#组件通信props" class="headerlink" title="组件通信props"></a>组件通信props</h3><figure class="highlight jsx"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> Component = React.createClass(&#123;</div><div class="line">  render:<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    <span class="keyword">return</span> (</div><div class="line">      &lt;div&gt;</div><div class="line">        &lt;Submessage &#123;...this.props &#125;  messages=&#123;<span class="keyword">this</span>.state.subMessages&#125; /&gt;</div><div class="line">      &lt;<span class="regexp">/div&gt;</span></div><div class="line"><span class="regexp">    )</span></div><div class="line"><span class="regexp">  &#125;</span></div><div class="line"><span class="regexp">&#125;);</span></div></pre></td></tr></table></figure>
+<h3 id="组件通信props"><a href="#组件通信props" class="headerlink" title="组件通信props"></a>组件通信props</h3><blockquote>
+<p>this.props.children  用于表示闭合标签组件之间的内容</p>
+</blockquote>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> Component = React.createClass(&#123;</div><div class="line">  render:<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    <span class="keyword">return</span> (</div><div class="line">      &lt;div&gt;</div><div class="line">        &lt;Submessage &#123;...this.props &#125;  messages=&#123;<span class="keyword">this</span>.state.subMessages&#125; /&gt;</div><div class="line">      &lt;<span class="regexp">/div&gt;</span></div><div class="line"><span class="regexp">    )</span></div><div class="line"><span class="regexp">  &#125;</span></div><div class="line"><span class="regexp">&#125;);</span></div></pre></td></tr></table></figure>
 <figure class="highlight jsx"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> Submessage = React.createClass(&#123;</div><div class="line">  propTypes:&#123;</div><div class="line">    <span class="comment">//验证props格式是否正确</span></div><div class="line">    messages: React.PropTypes.array.isRequired,</div><div class="line">  &#125;,</div><div class="line">  getDefaultProps:<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    <span class="comment">//props初始参数</span></div><div class="line">  &#125;,</div><div class="line">  render:<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    <span class="keyword">var</span> msgs = [];</div><div class="line">    <span class="keyword">this</span>.props.messages.forEach(<span class="function"><span class="keyword">function</span>(<span class="params">msg,index</span>)</span>&#123;</div><div class="line">      msgs.push(</div><div class="line">        &lt;p&gt;&#123;msg&#125;&lt;<span class="regexp">/p&gt;</span></div><div class="line"><span class="regexp">      )</span></div><div class="line"><span class="regexp">    &#125;);</span></div><div class="line"><span class="regexp"></span></div><div class="line"><span class="regexp">    return (</span></div><div class="line"><span class="regexp">      &lt;div&gt;&#123;msgs&#125;&lt;/</span>div&gt;</div><div class="line">    )</div><div class="line">  &#125;</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
 <blockquote>
 <p>PropTypes种类有 bool、array、func、number、object、string等</p>
@@ -459,8 +462,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2015/03/19/webpack/" rel="next" title="webpack的使用">
-                <i class="fa fa-chevron-left"></i> webpack的使用
+              <a href="/2016/01/19/redux/" rel="next" title="redux的使用">
+                <i class="fa fa-chevron-left"></i> redux的使用
               </a>
             
           </div>
@@ -469,8 +472,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2016/02/10/react实战/" rel="prev" title="react实战">
-                react实战 <i class="fa fa-chevron-right"></i>
+              <a href="/2016/02/10/gulp for react/" rel="prev" title="使用gulp配置react">
+                使用gulp配置react <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -550,7 +553,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">4</span>
+                  <span class="site-state-item-count">11</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
